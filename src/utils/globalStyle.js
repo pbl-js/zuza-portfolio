@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { colors } from "utils/colors"
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -12,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Khand', sans-serif;
         font-size: 1.6rem;
-        background-color: #07142C;
+        background-color: ${colors.pink};
         color: white;
     }
 `
