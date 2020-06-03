@@ -8,7 +8,7 @@ import Navigation from "components/Navigation/Navigation"
 
 const StyledMain = styled.main`
   margin-top: 72px;
-  padding: 30px;
+  padding: 30px 0;
   height: 200vh;
 `
 
