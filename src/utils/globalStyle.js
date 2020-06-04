@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import { colors } from "utils/colors"
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -13,8 +12,10 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Khand', sans-serif;
         font-size: 1.6rem;
-        background-color: ${colors.pink};
+        background-color: ${({ theme }) => theme.light};
         color: white;
+        transition: background-color ${({ transition }) =>
+          transition && "0.5s"};
     }
 `
 

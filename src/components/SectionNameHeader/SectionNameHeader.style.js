@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
 
-import { colors } from "utils/colors"
 import { fontSize, fontWeight } from "utils/typography"
 
 export const StyledHeader = styled.header`
@@ -14,15 +13,15 @@ export const StyledHeader = styled.header`
 export const TextLine = styled(motion.div)`
   display: flex;
   text-transform: uppercase;
-  color: ${colors.pink};
-  font-size: ${fontSize.xxxl};
+  color: ${({ theme }) => theme.light};
+  font-size: 5vw;
   font-weight: ${fontWeight.bold};
   letter-spacing: 0.4rem;
   line-height: 100%;
   -webkit-text-stroke: 3px;
-  -webkit-text-stroke-color: ${colors.darkPink};
+  -webkit-text-stroke-color: ${({ theme }) => theme.dark};
 `
 
 export const SingleWord = styled.div`
-  color: ${({ filled }) => filled && colors.darkPink};
+  color: ${({ filled, theme }) => filled && theme.dark};
 `

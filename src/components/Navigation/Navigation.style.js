@@ -10,10 +10,10 @@ export const StyledNav = styled.nav`
   z-index: 9999;
   width: 100%;
   height: 70px;
-  border-bottom: 4px solid ${colors.darkPink};
-  background-color: ${colors.pink};
-  color: ${colors.darkPink};
-
+  border-bottom: 4px solid ${({ theme }) => theme.dark};
+  background-color: ${({ theme }) => theme.light};
+  color: ${({ theme }) => theme.dark};
+  transition: background-color 0.5s, color 0.5s, border-bottom 0.5s;
   ul {
     height: 100%;
     display: flex;

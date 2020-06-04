@@ -5,7 +5,7 @@ import { StyledHeader, TextLine, SingleWord } from "./SectionNameHeader.style"
 
 const generateText = title => {
   let text = []
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 100; i++) {
     text.push({
       title,
       isEven: i % 2 === 0 ? true : false,
@@ -15,23 +15,24 @@ const generateText = title => {
   return text
 }
 
-const SectionNameHeader = ({ title }) => {
+const SectionNameHeader = ({ title, color }) => {
   const { scrollY } = useViewportScroll()
-  const reverseScroll = useTransform(scrollY, value => -value)
+  const scroll = useTransform(scrollY, value => value / 2)
+  const reverseScroll = useTransform(scrollY, value => -value / 2)
 
   return (
     <StyledHeader>
-      <TextLine style={{ x: scrollY }} initial={false}>
+      <TextLine style={{ x: scroll }} initial={false} color={color}>
         {generateText(title).map(item => (
-          <SingleWord key={item.key} filled={item.isEven}>
+          <SingleWord key={item.key} filled={item.isEven} color={color}>
             {item.title}
           </SingleWord>
         ))}
       </TextLine>
 
-      <TextLine style={{ x: reverseScroll }} initial={false}>
+      <TextLine style={{ x: reverseScroll }} initial={false} color={color}>
         {generateText(title).map(item => (
-          <SingleWord key={item.key} filled={!item.isEven}>
+          <SingleWord key={item.key} filled={!item.isEven} color={color}>
             {item.title}
           </SingleWord>
         ))}
