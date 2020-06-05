@@ -1,5 +1,5 @@
 import React from "react"
-import { motion, useViewportScroll, useTransform } from "framer-motion"
+import { useViewportScroll, useTransform } from "framer-motion"
 
 import { StyledHeader, TextLine, SingleWord } from "./SectionNameHeader.style"
 

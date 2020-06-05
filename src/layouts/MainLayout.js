@@ -7,7 +7,7 @@ import Navigation from "components/Navigation/Navigation"
 import ThemeContextProvider, { ThemeContext } from "context/ThemeContext"
 
 const StyledMain = styled.main`
-  margin-top: 72px;
+  margin-top: 82px;
   padding: 30px 0;
   height: 200vh;
 `
@@ -18,7 +18,7 @@ const ContextConsumer = ({ children }) => {
 
   useEffect(() => {
     setTransition(true)
-  })
+  }, [])
 
   return (
     <ThemeProvider theme={themeChooser()}>

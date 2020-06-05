@@ -1,10 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-  useContext,
-  useRef,
-  useCallback,
-} from "react"
+import React, { useEffect, useContext, useRef, useCallback } from "react"
 import { graphql } from "gatsby"
 import { ThemeContext } from "context/ThemeContext"
 
@@ -35,7 +29,7 @@ const IndexPage = props => {
     } else if (position > tertiaryRef.current.offsetTop - threshold) {
       setTheme("tertiary")
     }
-  }, [])
+  }, [setTheme])
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true })
@@ -43,7 +37,7 @@ const IndexPage = props => {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [handleScroll])
 
   return (
     <>
