@@ -7,10 +7,10 @@ const StyledSection = styled.section`
   height: 200vh;
 `
 
-const SectionWrapper = ({ title, children, color, forwardRef }) => {
+const SectionWrapper = ({ id, children, color, forwardRef }) => {
   return (
-    <StyledSection ref={forwardRef}>
-      <SectionNameHeader title={title} color={color} />
+    <StyledSection ref={forwardRef} id={id}>
+      <SectionNameHeader title={id} color={color} />
       {children}
     </StyledSection>
   )

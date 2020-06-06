@@ -10,6 +10,7 @@ const IndexPage = props => {
   const primaryRef = useRef(null)
   const secondaryRef = useRef(null)
   const tertiaryRef = useRef(null)
+  const quaternaryRef = useRef(null)
 
   const { setTheme } = useContext(ThemeContext)
 
@@ -26,7 +27,12 @@ const IndexPage = props => {
       position < tertiaryRef.current.offsetTop - threshold
     ) {
       setTheme("secondary")
-    } else if (position > tertiaryRef.current.offsetTop - threshold) {
+    } else if (
+      position > tertiaryRef.current.offsetTop - threshold &&
+      position < quaternaryRef.current.offsetTop - threshold
+    ) {
+      setTheme("tertiary")
+    } else if (position > quaternaryRef.current.offsetTop - threshold) {
       setTheme("tertiary")
     }
   }, [setTheme])
@@ -43,13 +49,7 @@ const IndexPage = props => {
     <>
       <SEO title="Home" />
 
-      <SectionWrapper title="portfolio" color="primary" forwardRef={primaryRef}>
-        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-      </SectionWrapper>
-
-      <SectionWrapper title="offer" color="secondary" forwardRef={secondaryRef}>
+      <SectionWrapper id="offer" color="primary" forwardRef={primaryRef}>
         <h1>{props.data.datoCmsPersonalinfo.email}</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
@@ -58,7 +58,27 @@ const IndexPage = props => {
         <p>Now go build something great.</p>
       </SectionWrapper>
 
-      <SectionWrapper title="about" color="tertiary" forwardRef={tertiaryRef}>
+      <SectionWrapper
+        id="portfolio"
+        color="secondary"
+        forwardRef={secondaryRef}
+      >
+        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
+        <p>Welcome to your new Gatsby site.</p>
+        <p>Now go build something great.</p>
+      </SectionWrapper>
+
+      <SectionWrapper id="about" color="tertiary" forwardRef={tertiaryRef}>
+        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
+        <p>Welcome to your new Gatsby site.</p>
+        <p>Now go build something great.</p>
+      </SectionWrapper>
+
+      <SectionWrapper
+        id="contact"
+        color="quaternary"
+        forwardRef={quaternaryRef}
+      >
         <h1>{props.data.datoCmsPersonalinfo.email}</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>

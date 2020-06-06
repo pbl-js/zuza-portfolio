@@ -82,6 +82,7 @@ export const Menu = styled.button`
   height: 100%;
   width: 100%;
   fill: ${({ theme }) => theme.dark};
+  z-index: 10;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -100,14 +101,17 @@ export const Menu = styled.button`
 
 export const Logo = styled(motion.div)`
   /* position: absolute; */
-  top: 10px;
+  /* top: 10px;
+  left: 50%; */
+  /* transform: translateX(-50%) !important; */
   grid-area: logo;
+  z-index: 9;
   /* left: 10%; */
   /* transform: translateX(-50%) !important; */
-  height: auto;
+  height: 100%;
   margin: 0 auto;
   fill: ${({ theme }) => theme.dark};
   @media ${SIZES.tablet} {
-    height: 100%;
+    height: 50px;
   }
 `

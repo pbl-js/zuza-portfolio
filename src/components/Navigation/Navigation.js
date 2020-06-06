@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 import {
   StyledNav,
@@ -12,7 +13,7 @@ import {
 import MenuIcon from "components/MenuIcon/MenuIcon"
 import LogoIcon from "components/LogoIcon/LogoIcon"
 
-const liItems = ["Offer", "Portfolio", "About", "Contact"]
+const liItems = ["offer", "portfolio", "about", "contact"]
 
 const Navigation = () => {
   const [open, setOpen] = useState(false)
@@ -23,7 +24,7 @@ const Navigation = () => {
   }
 
   const logoVariants = {
-    open: { scale: 2, y: "50px", transition: { duration: 0.2 } },
+    open: { scale: 3, y: "10vh", transition: { duration: 0.2 } },
     closed: {
       scale: 1,
       y: "0px",
@@ -65,13 +66,31 @@ const Navigation = () => {
     <StyledNav variants={navVariants} animate={open ? "open" : "closed"}>
       <DesktopNav>
         <ul>
-          <li>Offer</li>
-          <li>Portfolio</li>
-          <Logo>
-            <LogoIcon />
-          </Logo>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="offer" smooth={true} duration={500} offset={-100}>
+              Offer
+            </Link>
+          </li>
+          <li>
+            <Link to="portfolio" smooth={true} duration={500} offset={-100}>
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Logo>
+              <LogoIcon onClick={() => scroll.scrollToTop()} />
+            </Logo>
+          </li>
+          <li>
+            <Link to="about" smooth={true} duration={500} offset={-100}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="contact" smooth={true} duration={500} offset={-100}>
+              Contact
+            </Link>
+          </li>
         </ul>
       </DesktopNav>
 
@@ -87,7 +106,16 @@ const Navigation = () => {
         <MobileUl variants={ulVariants} initial="closed">
           {liItems.map(item => (
             <motion.li key={item} variants={liVariants}>
-              {item}
+              <Link
+                to={item}
+                smooth={true}
+                duration={500}
+                delay={700}
+                offset={-100}
+                onClick={() => setOpen(false)}
+              >
+                {item}
+              </Link>
             </motion.li>
           ))}
         </MobileUl>

@@ -5,9 +5,9 @@ const LogoIcon = props => {
     <svg
       id="Capa_1"
       enableBackground="new 0 0 512.064 512.064"
-      height="auto"
+      height="100%"
       viewBox="0 0 512.064 512.064"
-      width="auto"
+      width="100%"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
