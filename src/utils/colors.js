@@ -11,4 +11,8 @@ export const colors = {
     light: "#792727",
     dark: "#F2BA66",
   },
+  quaternary: {
+    light: "#F3DD66",
+    dark: "#833833",
+  },
 }

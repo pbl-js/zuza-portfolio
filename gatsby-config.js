@@ -8,6 +8,14 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -43,6 +51,9 @@ module.exports = {
         pages: path.join(__dirname, "src/pages"),
         utils: path.join(__dirname, "src/utils"),
         context: path.join(__dirname, "src/context"),
+        images: path.join(__dirname, "src/images"),
+        layouts: path.join(__dirname, "src/layouts"),
+        hooks: path.join(__dirname, "src/hooks"),
       },
     },
     {

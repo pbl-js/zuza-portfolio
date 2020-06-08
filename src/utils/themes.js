@@ -13,7 +13,6 @@ export const tertiaryTheme = {
   ...colors.tertiary,
 }
 
-// export const quaternaryTheme = {
-//   light: "#EBB740",
-//   dark: "#546F51",
-// }
+export const quaternaryTheme = {
+  ...colors.quaternary,
+}

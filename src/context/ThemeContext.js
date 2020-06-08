@@ -1,5 +1,10 @@
 import React, { createContext, useState } from "react"
-import { primaryTheme, secondaryTheme, tertiaryTheme } from "utils/themes"
+import {
+  primaryTheme,
+  secondaryTheme,
+  tertiaryTheme,
+  quaternaryTheme,
+} from "utils/themes"
 
 export const ThemeContext = createContext()
 
@@ -14,6 +19,8 @@ const ThemeContextProvider = props => {
         return secondaryTheme
       case "tertiary":
         return tertiaryTheme
+      case "quaternary":
+        return quaternaryTheme
       default:
         return tertiaryTheme
     }

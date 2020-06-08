@@ -1,9 +1,12 @@
-import React, { useEffect, useContext, useRef, useCallback } from "react"
+import React, { useContext, useRef } from "react"
+import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { ThemeContext } from "context/ThemeContext"
+import useScrollColor from "hooks/useScrollColor"
 
 import SEO from "components/seo"
 
+import NavigationLayout from "layouts/NavigationLayout"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 
 const IndexPage = props => {
@@ -14,43 +17,18 @@ const IndexPage = props => {
 
   const { setTheme } = useContext(ThemeContext)
 
-  const handleScroll = useCallback(() => {
-    const position = window.pageYOffset
-
-    const documentHeight = document.body.clientHeight
-    const threshold = documentHeight * 0.4
-
-    if (position < secondaryRef.current.offsetTop - threshold) {
-      setTheme("primary")
-    } else if (
-      position > secondaryRef.current.offsetTop - threshold &&
-      position < tertiaryRef.current.offsetTop - threshold
-    ) {
-      setTheme("secondary")
-    } else if (
-      position > tertiaryRef.current.offsetTop - threshold &&
-      position < quaternaryRef.current.offsetTop - threshold
-    ) {
-      setTheme("tertiary")
-    } else if (position > quaternaryRef.current.offsetTop - threshold) {
-      setTheme("tertiary")
-    }
-  }, [setTheme])
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true })
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [handleScroll])
+  useScrollColor(
+    { primaryRef, secondaryRef, tertiaryRef, quaternaryRef },
+    setTheme
+  )
 
   return (
-    <>
+    <NavigationLayout homepage={true}>
       <SEO title="Home" />
 
       <SectionWrapper id="offer" color="primary" forwardRef={primaryRef}>
         <h1>{props.data.datoCmsPersonalinfo.email}</h1>
+        <Link to="/portfolio/">Portfolio</Link>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         <h1>{props.data.datoCmsPersonalinfo.email}</h1>
@@ -83,7 +61,7 @@ const IndexPage = props => {
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
       </SectionWrapper>
-    </>
+    </NavigationLayout>
   )
 }
 
