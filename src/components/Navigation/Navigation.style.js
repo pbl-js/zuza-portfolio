@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 import Logo from "images/logo.svg"
 import Menu from "images/menu.svg"
+import layout from "utils/layout"
 
 import { SIZES } from "utils/mediaQueries"
 import { fontWeight, fontSize } from "utils/typography"
@@ -23,7 +24,6 @@ export const StyledNav = styled(motion.nav)`
     font-size: ${fontSize.l};
 
     a {
-      margin: 0 30px;
       cursor: pointer;
       text-decoration: none;
     }
@@ -38,13 +38,22 @@ export const DesktopNav = styled(StyledNav)`
 
   ul {
     height: 100%;
-    max-width: 800px;
+    max-width: ${layout.maxWidth};
     margin: 0 auto;
+    padding: 0 ${layout.mainPadding.mobile};
     display: grid;
+    grid-gap: 60px;
     align-items: center;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: 1fr;
     grid-template-areas: "none none logo menu menu";
+    @media ${SIZES.tablet} {
+      padding: 0 ${layout.mainPadding.tablet};
+    }
+
+    @media ${SIZES.laptop} {
+      padding: 0 ${layout.mainPadding.desktop};
+    }
 
     a {
       color: ${({ theme }) => theme.dark};
@@ -62,7 +71,7 @@ export const MobileNav = styled(StyledNav)`
   display: flex;
   flex-direction: column;
   height: 60px;
-  padding: 10px;
+  padding: 10px 0;
   @media ${SIZES.tablet} {
     display: none;
   }
