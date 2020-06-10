@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useState, useCallback } from "react"
 import {
   primaryTheme,
   secondaryTheme,
@@ -11,7 +11,7 @@ export const ThemeContext = createContext()
 const ThemeContextProvider = props => {
   const [theme, setTheme] = useState("primary")
 
-  const themeChooser = () => {
+  const themeChooser = useCallback(() => {
     switch (theme) {
       case "primary":
         return primaryTheme
@@ -24,7 +24,7 @@ const ThemeContextProvider = props => {
       default:
         return tertiaryTheme
     }
-  }
+  }, [theme])
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, themeChooser }}>

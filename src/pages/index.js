@@ -7,9 +7,10 @@ import useScrollColor from "hooks/useScrollColor"
 import SEO from "components/seo"
 
 import NavigationLayout from "layouts/NavigationLayout"
+import Portfolio from "components/Portfolio/Portfolio"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 
-const IndexPage = props => {
+const IndexPage = ({ data }) => {
   const primaryRef = useRef(null)
   const secondaryRef = useRef(null)
   const tertiaryRef = useRef(null)
@@ -27,27 +28,19 @@ const IndexPage = props => {
       <SEO title="Home" />
 
       <SectionWrapper id="offer" color="primary" forwardRef={primaryRef}>
-        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
+        <h1>{data.datoCmsPersonalinfo.email}</h1>
         <Link to="/portfolio/">Portfolio</Link>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
+        <h1>{data.datoCmsPersonalinfo.email}</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
       </SectionWrapper>
 
-      <SectionWrapper
-        id="portfolio"
-        color="secondary"
-        forwardRef={secondaryRef}
-      >
-        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-      </SectionWrapper>
+      <Portfolio id="portfolio" color="secondary" forwardRef={secondaryRef} />
 
       <SectionWrapper id="about" color="tertiary" forwardRef={tertiaryRef}>
-        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
+        <h1>{data.datoCmsPersonalinfo.email}</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
       </SectionWrapper>
@@ -57,7 +50,7 @@ const IndexPage = props => {
         color="quaternary"
         forwardRef={quaternaryRef}
       >
-        <h1>{props.data.datoCmsPersonalinfo.email}</h1>
+        <h1>{data.datoCmsPersonalinfo.email}</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
       </SectionWrapper>

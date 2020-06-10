@@ -62,7 +62,7 @@ module.exports = {
         fonts: [
           {
             family: `Khand`,
-            // subsets: ["latin-ext"],
+            subsets: ["latin"],
             variants: ["300", `400`, "500", "600", `700`],
           },
         ],

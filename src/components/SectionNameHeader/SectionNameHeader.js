@@ -5,7 +5,7 @@ import { StyledHeader, TextLine, SingleWord } from "./SectionNameHeader.style"
 
 const generateText = title => {
   let text = []
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 30; i++) {
     text.push({
       title,
       isEven: i % 2 === 0 ? true : false,
@@ -17,8 +17,8 @@ const generateText = title => {
 
 const SectionNameHeader = ({ title, color }) => {
   const { scrollY } = useViewportScroll()
-  const scroll = useTransform(scrollY, value => value / 2)
-  const reverseScroll = useTransform(scrollY, value => -value / 2)
+  const scroll = useTransform(scrollY, value => value / 3)
+  const reverseScroll = useTransform(scrollY, value => -value / 3)
 
   return (
     <StyledHeader>

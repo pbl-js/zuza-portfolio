@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from "react"
 
 const useScrollColor = (refs, setTheme) => {
-  const { primaryRef, secondaryRef, tertiaryRef, quaternaryRef } = refs
+  const { secondaryRef, tertiaryRef, quaternaryRef } = refs
 
   const handleScroll = useCallback(() => {
     const position = window.pageYOffset
@@ -24,7 +24,7 @@ const useScrollColor = (refs, setTheme) => {
     } else if (position > quaternaryRef.current.offsetTop - threshold) {
       setTheme("quaternary")
     }
-  }, [setTheme])
+  }, [setTheme, secondaryRef, tertiaryRef, quaternaryRef])
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true })
