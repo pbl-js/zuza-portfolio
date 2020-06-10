@@ -8,6 +8,7 @@ import SEO from "components/seo"
 
 import NavigationLayout from "layouts/NavigationLayout"
 import Portfolio from "components/Portfolio/Portfolio"
+import Offer from "components/Offer/Offer"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 
 const IndexPage = ({ data }) => {
@@ -27,15 +28,7 @@ const IndexPage = ({ data }) => {
     <NavigationLayout homepage={true}>
       <SEO title="Home" />
 
-      <SectionWrapper id="offer" color="primary" forwardRef={primaryRef}>
-        <h1>{data.datoCmsPersonalinfo.email}</h1>
-        <Link to="/portfolio/">Portfolio</Link>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <h1>{data.datoCmsPersonalinfo.email}</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-      </SectionWrapper>
+      <Offer id="offer" color="primary" forwardRef={primaryRef} />
 
       <Portfolio id="portfolio" color="secondary" forwardRef={secondaryRef} />
 

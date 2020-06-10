@@ -3,7 +3,6 @@ import Link from "gatsby-link"
 import { motion } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeContext } from "styled-components"
-import Arrow from "images/arrow.svg"
 
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 import { CategoryItem, MotionLink, StyledArrow } from "./Portfolio.style"
