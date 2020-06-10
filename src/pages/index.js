@@ -10,6 +10,7 @@ import NavigationLayout from "layouts/NavigationLayout"
 import Portfolio from "components/Portfolio/Portfolio"
 import Offer from "components/Offer/Offer"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
+import CallToAction from "components/CallToAction/CallToAction"
 
 const IndexPage = ({ data }) => {
   const primaryRef = useRef(null)
@@ -36,6 +37,11 @@ const IndexPage = ({ data }) => {
         <h1>{data.datoCmsPersonalinfo.email}</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
+
+        <CallToAction>
+          Ultimately, online content delivers your business's message to the
+          right audiences and ensures that the clients return.
+        </CallToAction>
       </SectionWrapper>
 
       <SectionWrapper
