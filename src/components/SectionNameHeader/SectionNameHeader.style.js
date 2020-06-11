@@ -5,7 +5,7 @@ import { SIZES } from "utils/mediaQueries"
 import { fontWeight } from "utils/typography"
 
 export const StyledHeader = styled.header`
-  margin-top: 100px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;

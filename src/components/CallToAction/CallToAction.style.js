@@ -10,12 +10,9 @@ export const MainWrapper = styled.div`
   justify-content: center;
   position: relative;
   width: 100%;
-  /* height: 400px; */
   margin: 50px 0;
   background-color: ${({ theme }) => theme.dark};
   width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
 `
 
 export const Container = styled.div`
@@ -24,7 +21,7 @@ export const Container = styled.div`
   align-items: center;
   z-index: 2;
   height: 100%;
-  padding: 50px ${layout.mainPadding.mobile};
+  padding: 30px ${layout.mainPadding.mobile};
   max-width: ${layout.maxWidth};
   color: ${({ theme }) => theme.light};
 
@@ -32,7 +29,7 @@ export const Container = styled.div`
     margin-top: 20px;
   }
   @media ${SIZES.tablet} {
-    padding: 50px ${layout.mainPadding.tablet};
+    padding: 40px ${layout.mainPadding.tablet};
   }
 
   @media ${SIZES.laptop} {

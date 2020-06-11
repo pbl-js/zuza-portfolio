@@ -50,7 +50,7 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
         <Link
           to="/portfolio"
           key={category.node.id}
-          style={{ textDecoration: "none" }}
+          style={{ textDecoration: "none", width: "100%" }}
         >
           <CategoryItem whileHover="hover" variants={containerVariants}>
             <MotionLink variants={linkVariants}>

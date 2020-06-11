@@ -11,6 +11,9 @@ const StyledSection = styled.section`
 `
 
 const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   padding: 50px ${layout.mainPadding.mobile};
   max-width: ${layout.maxWidth};
