@@ -5,6 +5,8 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        transition: background-color ${({ transition }) =>
+          transition && "0.5s"};
     }
     html {
         font-size: 62.5%;
@@ -14,8 +16,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.6rem;
         background-color: ${({ theme }) => theme.light};
         color: white;
-        transition: background-color ${({ transition }) =>
-          transition && "0.5s"};
+        
     }
 `
 

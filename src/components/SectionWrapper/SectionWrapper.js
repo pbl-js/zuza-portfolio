@@ -6,9 +6,7 @@ import layout from "utils/layout"
 
 import SectionNameHeader from "components/SectionNameHeader/SectionNameHeader"
 
-const StyledSection = styled.section`
-  height: 200vh;
-`
+const StyledSection = styled.section``
 
 const ContentWrapper = styled.div`
   display: flex;

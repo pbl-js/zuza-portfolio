@@ -3,7 +3,8 @@ import { fontSize, fontWeight } from "utils/typography"
 
 const InfoBox = styled.div`
   position: relative;
-  width: 50%;
+  width: 100%;
+  height: 100%;
   max-width: 400px;
   padding: 15px;
   background-color: ${({ theme }) => theme.light};
