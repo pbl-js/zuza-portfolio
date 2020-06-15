@@ -9,6 +9,7 @@ import SEO from "components/seo"
 import NavigationLayout from "layouts/NavigationLayout"
 import Portfolio from "components/Portfolio/Portfolio"
 import Offer from "components/Offer/Offer"
+import About from "components/About/About"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 import CallToAction from "components/CallToAction/CallToAction"
 
@@ -33,16 +34,7 @@ const IndexPage = ({ data }) => {
 
       <Portfolio id="portfolio" color="secondary" forwardRef={secondaryRef} />
 
-      <SectionWrapper id="about" color="tertiary" forwardRef={tertiaryRef}>
-        <h1>{data.datoCmsPersonalinfo.email}</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-
-        <CallToAction>
-          Ultimately, online content delivers your business's message to the
-          right audiences and ensures that the clients return.
-        </CallToAction>
-      </SectionWrapper>
+      <About id="about" color="tertiary" forwardRef={tertiaryRef} />
 
       <SectionWrapper
         id="contact"
