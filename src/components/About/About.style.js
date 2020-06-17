@@ -70,3 +70,34 @@ export const StyledH1 = styled(H1)`
     color: ${({ theme }) => theme.dark};
   }
 `
+
+export const ToggleWrapper = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+`
+export const ListHeader = styled.div`
+position: relative;
+  padding-left: 30px;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    background-color: ${({ theme }) => theme.dark};
+    /* border: 2px solid ${({ theme }) => theme.dark}; */
+  }
+`
+
+export const StyledH2 = styled(H1)`
+  line-height: 100%;
+  text-align: left;
+  font-size: ${fontSize.xxl} !important;
+  font-weight: ${fontWeight.semiBold};
+  letter-spacing: 0.3rem;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+`

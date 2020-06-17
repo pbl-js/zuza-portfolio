@@ -24,7 +24,7 @@ export const MotionLink = styled(motion.div)`
   font-size: ${fontSize.l};
   font-weight: ${fontWeight.semiBold};
   letter-spacing: 0.4rem;
-  color: ${({ theme }) => theme.light};
+  color: transparent;
   -webkit-text-stroke: 1.5px;
   -webkit-text-stroke-color: ${({ theme }) => theme.dark};
 
