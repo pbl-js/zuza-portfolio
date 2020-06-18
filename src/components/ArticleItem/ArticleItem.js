@@ -16,7 +16,7 @@ const ArticleItem = ({ title, topics, image, activeTopics }) => {
   }, [activeTopics, topicsList])
 
   return (
-    <ItemWrapper active={active}>
+    <ItemWrapper active="tret">
       <Image fixed={image.fixed} style={{ width: "200px", height: "100px" }} />
       {active && <h4>active</h4>}
       {topics.map(topic => (

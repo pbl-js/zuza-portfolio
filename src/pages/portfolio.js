@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
@@ -7,11 +7,32 @@ import { ContentWrapper, TopicsWrapper } from "components/Portfolio.style.js"
 import SectionNameHeader from "components/SectionNameHeader/SectionNameHeader"
 import ArticleItem from "components/ArticleItem/ArticleItem"
 import TopicToggle from "components/TopicToggle/TopicToggle"
+import { render } from "react-dom"
 
 const PortfolioPage = ({ data }) => {
-  const articles = data.allDatoCmsArticle.edges
+  const allArticles = data.allDatoCmsArticle.edges
   const topics = data.allDatoCmsTopic.edges
   const [activeTopics, setActiveTopics] = useState([])
+  const [renderArticles, setRenderArticles] = useState([])
+
+  useEffect(() => {
+    allArticles.forEach(article => {
+      const articleTopics = article.node.topics.map(topic => topic.topicItem)
+      let commonPart = articleTopics.filter(topic =>
+        activeTopics.includes(topic)
+      )
+
+      if (commonPart.length !== 0) {
+        if (!renderArticles.includes(article)) {
+          setRenderArticles(prevState => [...prevState, article])
+        }
+      } else {
+        setRenderArticles(prevState =>
+          prevState.filter(item => item !== article)
+        )
+      }
+    })
+  }, [activeTopics])
 
   const addActiveTopics = topic => {
     if (activeTopics.indexOf(topic) === -1) {
@@ -26,11 +47,7 @@ const PortfolioPage = ({ data }) => {
     <NavigationLayout>
       <ContentWrapper>
         <SectionNameHeader title="portfolio" />
-        <Link to="/#contact">Dawaj</Link>
 
-        {activeTopics.map(active => (
-          <h4 key={active}>{active}</h4>
-        ))}
         <h1>siema</h1>
 
         <TopicsWrapper>
@@ -43,7 +60,7 @@ const PortfolioPage = ({ data }) => {
           ))}
         </TopicsWrapper>
 
-        {articles.map(article => (
+        {renderArticles.map(article => (
           <ArticleItem
             key={article.node.id}
             title={article.node.title}
