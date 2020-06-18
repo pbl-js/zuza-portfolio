@@ -3,11 +3,14 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import NavigationLayout from "layouts/NavigationLayout"
-import { ContentWrapper, TopicsWrapper } from "components/Portfolio.style.js"
+import {
+  ContentWrapper,
+  Counter,
+  TopicsWrapper,
+  TopicToggle,
+} from "components/Portfolio.style.js"
 import SectionNameHeader from "components/SectionNameHeader/SectionNameHeader"
 import ArticleItem from "components/ArticleItem/ArticleItem"
-import TopicToggle from "components/TopicToggle/TopicToggle"
-import { render } from "react-dom"
 
 const PortfolioPage = ({ data }) => {
   const allArticles = data.allDatoCmsArticle.edges
@@ -46,17 +49,17 @@ const PortfolioPage = ({ data }) => {
   return (
     <NavigationLayout>
       <ContentWrapper>
-        <SectionNameHeader title="portfolio" />
-
-        <h1>siema</h1>
+        <Counter>{`${renderArticles.length}/${allArticles.length}`}</Counter>
 
         <TopicsWrapper>
           {topics.map(topic => (
             <TopicToggle
               key={topic.node.id}
-              title={topic.node.topicItem}
-              addActiveTopics={addActiveTopics}
-            />
+              onClick={() => addActiveTopics(topic.node.topicItem)}
+              active={activeTopics.includes(topic.node.topicItem)}
+            >
+              {topic.node.topicItem}
+            </TopicToggle>
           ))}
         </TopicsWrapper>
 
