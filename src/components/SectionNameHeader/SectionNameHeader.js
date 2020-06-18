@@ -15,24 +15,24 @@ const generateText = title => {
   return text
 }
 
-const SectionNameHeader = ({ title, color }) => {
+const SectionNameHeader = ({ title }) => {
   const { scrollY } = useViewportScroll()
   const scroll = useTransform(scrollY, value => value / 3)
   const reverseScroll = useTransform(scrollY, value => -value / 3)
 
   return (
     <StyledHeader>
-      <TextLine style={{ x: scroll }} initial={false} color={color}>
+      <TextLine style={{ x: scroll }} initial={false}>
         {generateText(title).map(item => (
-          <SingleWord key={item.key} filled={item.isEven} color={color}>
+          <SingleWord key={item.key} filled={item.isEven}>
             {item.title}
           </SingleWord>
         ))}
       </TextLine>
 
-      <TextLine style={{ x: reverseScroll }} initial={false} color={color}>
+      <TextLine style={{ x: reverseScroll }} initial={false}>
         {generateText(title).map(item => (
-          <SingleWord key={item.key} filled={!item.isEven} color={color}>
+          <SingleWord key={item.key} filled={!item.isEven}>
             {item.title}
           </SingleWord>
         ))}
