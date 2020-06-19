@@ -9,7 +9,6 @@ import {
   ListHeader,
   StyledH2,
 } from "./About.style"
-import H1 from "components/H1/H1"
 import Dots from "components/Dots/Dots"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 import CallToAction from "components/CallToAction/CallToAction"
@@ -27,7 +26,7 @@ const About = ({ id, color, forwardRef }) => {
   return (
     <SectionWrapper id={id} color={color} forwardRef={forwardRef}>
       <AboutHeader>
-        <StyledH1 stroke>
+        <StyledH1 stroke="stroke">
           <span>Engaging</span>
           <span>content</span>
           <span>makes</span>
@@ -40,7 +39,9 @@ const About = ({ id, color, forwardRef }) => {
 
         <ul>
           <StyledBox>Generating regular and organic traffic</StyledBox>
-          <StyledBox secondary>Increasing conversion rates</StyledBox>
+          <StyledBox secondary="secondary">
+            Increasing conversion rates
+          </StyledBox>
           <StyledBox>
             Forging rapport between clients and your message
           </StyledBox>

@@ -1,5 +1,4 @@
 import React, { useContext, useRef } from "react"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { ThemeContext } from "context/ThemeContext"
 import useScrollColor from "hooks/useScrollColor"
@@ -11,7 +10,6 @@ import Portfolio from "components/Portfolio/Portfolio"
 import Offer from "components/Offer/Offer"
 import About from "components/About/About"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
-import CallToAction from "components/CallToAction/CallToAction"
 
 const IndexPage = ({ data }) => {
   const primaryRef = useRef(null)

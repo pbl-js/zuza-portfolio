@@ -4,7 +4,7 @@ const CorporateResponsibility = () => {
   return (
     <svg
       id="Layer_1"
-      enable-background="new 0 0 512.004 512.004"
+      enableBackground="new 0 0 512.004 512.004"
       height="512"
       viewBox="0 0 512.004 512.004"
       width="512"

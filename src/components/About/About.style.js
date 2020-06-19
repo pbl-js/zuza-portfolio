@@ -4,7 +4,6 @@ import { fontSize, fontWeight } from "utils/typography"
 
 import H1 from "components/H1/H1"
 import InfoBox from "components/InfoBox/InfoBox"
-import Dots from "components/Dots/Dots"
 
 export const AboutHeader = styled.header`
   width: 100%;

@@ -32,6 +32,7 @@ export const TopicsWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-bottom: 30px;
 `
 
 export const TopicToggle = styled.button`

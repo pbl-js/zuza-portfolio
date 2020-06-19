@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { fontSize, fontWeight } from "utils/typography"
-import { SIZES } from "utils/mediaQueries"
 import Arrow from "images/arrowDown.svg"
 import { motion } from "framer-motion"
 

@@ -12,7 +12,7 @@ const Arrow = () => {
       width="451.847px"
       height="451.847px"
       viewBox="0 0 451.847 451.847"
-      style="enable-background:new 0 0 451.847 451.847;"
+      style="enableBackground:new 0 0 451.847 451.847;"
       xmlSpace="preserve"
     >
       <g>

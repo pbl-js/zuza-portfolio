@@ -15,7 +15,7 @@ const AboutToggle = ({ children, title, description }) => {
     open: {
       height: "100%",
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
       },
     },
     close: {

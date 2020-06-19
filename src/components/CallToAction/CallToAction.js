@@ -21,7 +21,7 @@ const CallToAction = ({ children }) => {
     } else {
       controls.stop()
     }
-  }, [run])
+  }, [run, controls])
 
   return (
     <MainWrapper>

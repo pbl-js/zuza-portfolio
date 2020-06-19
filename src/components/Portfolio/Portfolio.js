@@ -49,6 +49,7 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
       {data.allDatoCmsTopic.edges.map(category => (
         <Link
           to="/portfolio"
+          state={{ active: category.node.topicItem }}
           key={category.node.id}
           style={{ textDecoration: "none", width: "100%" }}
         >

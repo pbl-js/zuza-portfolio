@@ -18,6 +18,9 @@ const GlobalStyle = createGlobalStyle`
         color: white;
         
     }
+    .gatsby-image-outer-wrapper {
+    display: contents;
+  }
 `
 
 export default GlobalStyle

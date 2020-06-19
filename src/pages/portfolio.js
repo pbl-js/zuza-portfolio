@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
 
 import NavigationLayout from "layouts/NavigationLayout"
 import {
@@ -9,13 +8,12 @@ import {
   TopicsWrapper,
   TopicToggle,
 } from "components/Portfolio.style.js"
-import SectionNameHeader from "components/SectionNameHeader/SectionNameHeader"
 import ArticleItem from "components/ArticleItem/ArticleItem"
 
-const PortfolioPage = ({ data }) => {
+const PortfolioPage = ({ data, location }) => {
   const allArticles = data.allDatoCmsArticle.edges
   const topics = data.allDatoCmsTopic.edges
-  const [activeTopics, setActiveTopics] = useState([])
+  const [activeTopics, setActiveTopics] = useState([location.state.active])
   const [renderArticles, setRenderArticles] = useState([])
 
   useEffect(() => {
@@ -98,7 +96,7 @@ export const query = graphql`
             topicItem
           }
           image {
-            fixed(width: 125, height: 125) {
+            fixed(width: 450, height: 150) {
               ...GatsbyDatoCmsFixed
             }
           }
