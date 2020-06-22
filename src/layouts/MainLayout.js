@@ -3,6 +3,9 @@ import GlobalStyle from "utils/globalStyle"
 import { ThemeProvider } from "styled-components"
 
 import ThemeContextProvider, { ThemeContext } from "context/ThemeContext"
+import ActiveTopicsContextProvider, {
+  ActiveTopicsContext,
+} from "context/ActiveTopicsContext"
 
 const ContextConsumer = ({ children }) => {
   const { themeChooser } = useContext(ThemeContext)
@@ -24,7 +27,9 @@ const ContextConsumer = ({ children }) => {
 const MainLayout = ({ children }) => {
   return (
     <ThemeContextProvider>
-      <ContextConsumer children={children} />
+      <ActiveTopicsContextProvider>
+        <ContextConsumer children={children} />
+      </ActiveTopicsContextProvider>
     </ThemeContextProvider>
   )
 }

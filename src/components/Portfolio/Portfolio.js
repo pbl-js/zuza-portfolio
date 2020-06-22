@@ -3,6 +3,7 @@ import Link from "gatsby-link"
 import { motion } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeContext } from "styled-components"
+import { ActiveTopicsContext } from "context/ActiveTopicsContext"
 
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 import { CategoryItem, MotionLink, StyledArrow } from "./Portfolio.style"
@@ -22,6 +23,7 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
   `)
 
   const themeContext = useContext(ThemeContext)
+  const { setActiveTopics } = useContext(ActiveTopicsContext)
 
   const containerVariants = {
     hover: {},
@@ -49,9 +51,9 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
       {data.allDatoCmsTopic.edges.map(category => (
         <Link
           to="/portfolio"
-          state={{ active: category.node.topicItem }}
           key={category.node.id}
           style={{ textDecoration: "none", width: "100%" }}
+          onClick={() => setActiveTopics([category.node.topicItem])}
         >
           <CategoryItem whileHover="hover" variants={containerVariants}>
             <MotionLink variants={linkVariants}>

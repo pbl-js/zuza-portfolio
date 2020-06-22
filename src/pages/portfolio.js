@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { graphql } from "gatsby"
+
+import { ActiveTopicsContext } from "context/ActiveTopicsContext"
 
 import NavigationLayout from "layouts/NavigationLayout"
 import {
@@ -11,10 +13,10 @@ import {
 } from "components/Portfolio.style.js"
 import ArticleItem from "components/ArticleItem/ArticleItem"
 
-const PortfolioPage = ({ data, location }) => {
+const PortfolioPage = ({ data }) => {
   const allArticles = data.allDatoCmsArticle.edges
   const topics = data.allDatoCmsTopic.edges
-  const [activeTopics, setActiveTopics] = useState([location.state.active])
+  const { activeTopics, addActiveTopics } = useContext(ActiveTopicsContext)
   const [renderArticles, setRenderArticles] = useState([])
 
   useEffect(() => {
@@ -35,15 +37,6 @@ const PortfolioPage = ({ data, location }) => {
       }
     })
   }, [activeTopics])
-
-  const addActiveTopics = topic => {
-    if (activeTopics.indexOf(topic) === -1) {
-      return setActiveTopics(prevState => [...prevState, topic])
-    } else {
-      const updateTopics = activeTopics.filter(item => item !== topic)
-      return setActiveTopics(updateTopics)
-    }
-  }
 
   return (
     <NavigationLayout>
