@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import NavigationLayout from "layouts/NavigationLayout"
 import {
   ContentWrapper,
+  ArticleWrapper,
   Counter,
   TopicsWrapper,
   TopicToggle,
@@ -61,15 +62,17 @@ const PortfolioPage = ({ data, location }) => {
           ))}
         </TopicsWrapper>
 
-        {renderArticles.map(article => (
-          <ArticleItem
-            key={article.node.id}
-            title={article.node.title}
-            topics={article.node.topics}
-            image={article.node.image}
-            activeTopics={activeTopics}
-          />
-        ))}
+        <ArticleWrapper>
+          {renderArticles.map(article => (
+            <ArticleItem
+              key={article.node.id}
+              title={article.node.title}
+              topics={article.node.topics}
+              image={article.node.image}
+              activeTopics={activeTopics}
+            />
+          ))}
+        </ArticleWrapper>
       </ContentWrapper>
     </NavigationLayout>
   )

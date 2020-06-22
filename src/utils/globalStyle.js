@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         transition: background-color ${({ transition }) =>
           transition && "0.5s"};
+        text-decoration: none;
     }
     html {
         font-size: 62.5%;

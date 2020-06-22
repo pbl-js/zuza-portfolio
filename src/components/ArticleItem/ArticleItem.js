@@ -1,4 +1,7 @@
 import React from "react"
+import Link from "gatsby-link"
+import slugify from "slugify"
+
 import {
   ItemWrapper,
   StyledImage,
@@ -7,22 +10,28 @@ import {
 } from "./ArticleItem.style"
 
 const ArticleItem = ({ title, topics, image }) => {
+  const slug = slugify(title, { lower: true })
+  const link = `/portfolio/${slug}`
+  console.log(link)
+
   return (
-    <ItemWrapper>
-      <Line />
+    <Link to={link}>
+      <ItemWrapper>
+        <Line />
 
-      <StyledImage fixed={image.fixed} />
+        <StyledImage fixed={image.fixed} />
 
-      <InnerWrapper>
-        <h2>{title}</h2>
-        <ul>
-          {topics.map(topic => (
-            <li key={topic.id}>{topic.topicItem}</li>
-          ))}
-        </ul>
-      </InnerWrapper>
-      <Line bottom />
-    </ItemWrapper>
+        <InnerWrapper>
+          <h2>{title}</h2>
+          <ul>
+            {topics.map(topic => (
+              <li key={topic.id}>{topic.topicItem}</li>
+            ))}
+          </ul>
+        </InnerWrapper>
+        <Line bottom />
+      </ItemWrapper>
+    </Link>
   )
 }
 

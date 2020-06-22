@@ -35,7 +35,7 @@ export const StyledImage = styled(Image)`
 
 export const InnerWrapper = styled.div`
   overflow: hidden;
-  flex-grow: 1;
+  width: 100%;
   padding: 30px 0 30px 30px;
   display: flex;
   flex-direction: column;

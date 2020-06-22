@@ -35,6 +35,10 @@ export const TopicsWrapper = styled.div`
   margin-bottom: 30px;
 `
 
+export const ArticleWrapper = styled.div`
+  width: 100%;
+`
+
 export const TopicToggle = styled.button`
   padding: 10px 30px;
   width: 100%;
