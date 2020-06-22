@@ -9,7 +9,7 @@ import NavigationLayout from "layouts/NavigationLayout"
 import Portfolio from "components/Portfolio/Portfolio"
 import Offer from "components/Offer/Offer"
 import About from "components/About/About"
-import SectionWrapper from "components/SectionWrapper/SectionWrapper"
+import Contact from "components/Contact/Contact"
 
 const IndexPage = ({ data }) => {
   const primaryRef = useRef(null)
@@ -34,15 +34,12 @@ const IndexPage = ({ data }) => {
 
       <About id="about" color="tertiary" forwardRef={tertiaryRef} />
 
-      <SectionWrapper
+      <Contact
         id="contact"
         color="quaternary"
         forwardRef={quaternaryRef}
-      >
-        <h1>{data.datoCmsPersonalinfo.email}</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-      </SectionWrapper>
+        contactData={data.datoCmsPersonalinfo}
+      />
     </NavigationLayout>
   )
 }
@@ -51,6 +48,9 @@ export const query = graphql`
   query {
     datoCmsPersonalinfo {
       email
+      phone
+      linkedin
+      nip
     }
   }
 `
