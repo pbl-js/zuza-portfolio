@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 import { graphql } from "gatsby"
+import { ThemeContext } from "context/ThemeContext"
 
 import { ActiveTopicsContext } from "context/ActiveTopicsContext"
 
@@ -37,6 +38,11 @@ const PortfolioPage = ({ data }) => {
       }
     })
   }, [activeTopics])
+
+  const { setTheme } = useContext(ThemeContext)
+  useEffect(() => {
+    setTheme("secondary")
+  })
 
   return (
     <NavigationLayout>

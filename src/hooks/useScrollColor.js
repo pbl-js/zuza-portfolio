@@ -9,7 +9,7 @@ const useScrollColor = (refs, setTheme) => {
     const windowHeight = window.innerHeight
     const threshold = windowHeight * 0.4
 
-    if (position < secondaryRef.current.offsetTop - threshold) {
+    if (position < secondaryRef.current.offsetTop - threshold && position > 1) {
       setTheme("primary")
     } else if (
       position > secondaryRef.current.offsetTop - threshold &&
