@@ -40,6 +40,10 @@ export const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  img {
+    width: 50%;
+  }
   h2 {
     ${strokeText}
     line-height: 100%;
