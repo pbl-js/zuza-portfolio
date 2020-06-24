@@ -67,6 +67,7 @@ export const StyledLinkedin = styled(Linkedin)``
 export const StyledForm = styled.form`
   display: grid;
   grid-gap: 20px;
+  color: ${({ theme }) => theme.dark};
 
   input {
     width: 100%;

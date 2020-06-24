@@ -1,4 +1,5 @@
 import React from "react"
+import { useFormik } from "formik"
 
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 import {
@@ -14,7 +15,37 @@ import {
 } from "./Contact.style"
 
 const Contact = ({ id, color, forwardRef, contactData }) => {
-  console.log(contactData)
+  const initialValues = {
+    email: "",
+    message: "",
+  }
+
+  const onSubmit = values => {
+    console.log(values)
+  }
+
+  const validate = values => {
+    let errors = {}
+
+    if (!values.message) {
+      errors.message = "Message is required"
+    }
+
+    if (!values.email) {
+      errors.email = "Email is required"
+    }
+
+    return errors
+  }
+
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validate,
+  })
+
+  console.log(formik.errors)
+
   return (
     <SectionWrapper id={id} color={color} forwardRef={forwardRef}>
       <MainWrapper>
@@ -60,10 +91,31 @@ const Contact = ({ id, color, forwardRef, contactData }) => {
             </p>
           </HeadingWrapper>
 
-          <StyledForm>
-            <input type="email" placeholder="Email" />
-            <textarea placeholder="Message" />
-            <button>Send</button>
+          <StyledForm onSubmit={formik.handleSubmit}>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              onChange={formik.handleChange}
+              value={formik.values.name}
+              onBlur={formik.handleBlur}
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Message"
+              onChange={formik.handleChange}
+              value={formik.values.message}
+              onBlur={formik.handleBlur}
+            />
+            {formik.errors.email && formik.touched.email && (
+              <div>{formik.errors.email}</div>
+            )}
+            {formik.errors.message && formik.touched.message && (
+              <div>{formik.errors.message}</div>
+            )}
+            <button type="submit">Send</button>
           </StyledForm>
         </InnerWrapper>
       </MainWrapper>
