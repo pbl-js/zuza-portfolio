@@ -6,6 +6,7 @@ import useScrollColor from "hooks/useScrollColor"
 import SEO from "components/seo"
 
 import NavigationLayout from "layouts/NavigationLayout"
+import Hero from "components/Hero/Hero"
 import Portfolio from "components/Portfolio/Portfolio"
 import Offer from "components/Offer/Offer"
 import About from "components/About/About"
@@ -27,6 +28,8 @@ const IndexPage = ({ data }) => {
   return (
     <NavigationLayout homepage={true}>
       <SEO title="Home" />
+
+      <Hero image={data.datoCmsPersonalinfo.image} />
 
       <Offer id="offer" color="primary" forwardRef={primaryRef} />
 
@@ -51,6 +54,11 @@ export const query = graphql`
       phone
       linkedin
       nip
+      image {
+        fluid(maxWidth: 600) {
+          ...GatsbyDatoCmsFluid
+        }
+      }
     }
   }
 `
