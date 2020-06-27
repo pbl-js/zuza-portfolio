@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import H1 from "components/H1/H1"
 import InfoBox from "components/InfoBox/InfoBox"
+import SectionNameHeader from "components/SectionNameHeader/SectionNameHeader"
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -17,6 +18,7 @@ const StyledHeader = styled.header`
 const StyledH1 = styled(H1)`
   max-width: 800px;
   margin-bottom: 50px;
+  /* color: white; */
 `
 
 const BoxWrapper = styled.div`
@@ -32,36 +34,52 @@ const NameSurnameWrapper = styled.div`
   flex-grow: 1;
 `
 
+const StyledInfoBox = styled(InfoBox)`
+  /* color: white; */
+`
+
 const ColorWrapper = styled.div`
   height: 30vw;
   width: 30vw;
-  background-color: ${({ theme }) => theme.dark};
+  background-color: ${({ theme }) => theme.medium};
 `
 
 const Hero = ({ image }) => {
   return (
     <StyledHeader>
       <NameSurnameWrapper>
-        <ColorWrapper></ColorWrapper>
+        <ColorWrapper>
+          <StyledH1 style={{ color: "white", fontSize: "122px" }}>
+            ZUZA NAZARUK
+          </StyledH1>
+        </ColorWrapper>
       </NameSurnameWrapper>
 
       <div>
         <BoxWrapper>
-          <InfoBox>short & long blog posts </InfoBox>
-          <InfoBox secondary="secondary">guides & tutorials </InfoBox>
-          <InfoBox>social media posts </InfoBox>
-          <InfoBox secondary="secondary">newsletters </InfoBox>
-          <InfoBox>case studies </InfoBox>
-          <InfoBox secondary="secondary">website & app content </InfoBox>
+          <StyledInfoBox>short & long blog posts </StyledInfoBox>
+          <StyledInfoBox secondary="secondary">
+            guides & tutorials{" "}
+          </StyledInfoBox>
+          <StyledInfoBox>social media posts </StyledInfoBox>
+          <StyledInfoBox secondary="secondary">newsletters </StyledInfoBox>
+          <StyledInfoBox>case studies </StyledInfoBox>
+          <StyledInfoBox secondary="secondary">
+            website & app content{" "}
+          </StyledInfoBox>
         </BoxWrapper>
 
         <BoxWrapper>
-          <InfoBox secondary="secondary">website & app content </InfoBox>
-          <InfoBox>case studies </InfoBox>
-          <InfoBox secondary="secondary">newsletters </InfoBox>
-          <InfoBox>social media posts </InfoBox>
-          <InfoBox secondary="secondary">guides & tutorials </InfoBox>
-          <InfoBox>short & long blog posts </InfoBox>
+          <StyledInfoBox secondary="secondary">
+            website & app content{" "}
+          </StyledInfoBox>
+          <StyledInfoBox>case studies </StyledInfoBox>
+          <StyledInfoBox secondary="secondary">newsletters </StyledInfoBox>
+          <StyledInfoBox>social media posts </StyledInfoBox>
+          <StyledInfoBox secondary="secondary">
+            guides & tutorials{" "}
+          </StyledInfoBox>
+          <StyledInfoBox>short & long blog posts </StyledInfoBox>
         </BoxWrapper>
       </div>
 

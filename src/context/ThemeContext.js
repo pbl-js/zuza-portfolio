@@ -1,5 +1,6 @@
 import React, { createContext, useState, useCallback } from "react"
 import {
+  heroTheme,
   primaryTheme,
   secondaryTheme,
   tertiaryTheme,
@@ -9,10 +10,12 @@ import {
 export const ThemeContext = createContext()
 
 const ThemeContextProvider = props => {
-  const [theme, setTheme] = useState("primary")
+  const [theme, setTheme] = useState("hero")
 
   const themeChooser = useCallback(() => {
     switch (theme) {
+      case "hero":
+        return heroTheme
       case "primary":
         return primaryTheme
       case "secondary":

@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from "react"
 
 const useScrollColor = (refs, setTheme) => {
-  const { secondaryRef, tertiaryRef, quaternaryRef } = refs
+  const { primaryRef, secondaryRef, tertiaryRef, quaternaryRef } = refs
 
   const handleScroll = useCallback(() => {
     const position = window.pageYOffset
@@ -9,7 +9,12 @@ const useScrollColor = (refs, setTheme) => {
     const windowHeight = window.innerHeight
     const threshold = windowHeight * 0.4
 
-    if (position < secondaryRef.current.offsetTop - threshold && position > 1) {
+    if (position < primaryRef.current.offsetTop - threshold && position > 1) {
+      setTheme("hero")
+    } else if (
+      position > primaryRef.current.offsetTop - threshold &&
+      position < secondaryRef.current.offsetTop - threshold
+    ) {
       setTheme("primary")
     } else if (
       position > secondaryRef.current.offsetTop - threshold &&
