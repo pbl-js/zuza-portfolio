@@ -10,11 +10,6 @@ const StyledLogo = styled(Logo)`
   .st1 {
     fill: white;
   }
-
-  /* .st2 {
-    fill: white;
-    color: white;
-  } */
 `
 
 export default StyledLogo

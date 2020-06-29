@@ -4,13 +4,14 @@ import H1 from "components/H1/H1"
 import InfoBox from "components/InfoBox/InfoBox"
 import { fontSize, fontWeight } from "utils/typography"
 import Logo from "components/Logo/Logo"
+import Arrow from "images/arrow.svg"
 
 export const StyledHeader = styled.header`
   width: 100%;
   position: relative;
   height: calc(100vh - 100px);
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: 2fr auto auto;
   align-items: center;
   justify-items: center;
   grid-gap: 40px;
@@ -19,14 +20,31 @@ export const StyledHeader = styled.header`
 
 export const StyledH1 = styled(H1)`
   max-width: 800px;
-  margin-bottom: 50px;
+  margin: 0 20px 0 20px;
+
+  font-size: ${fontSize.xs};
+  font-weight: ${fontWeight.medium};
+
+  @media ${SIZES.tablet} {
+    font-size: ${fontSize.m};
+    font-weight: ${fontWeight.medium};
+  }
 `
 
 export const BoxContent = styled.div`
-  display: grid;
-  grid-gap: 40px;
+  display: none;
+  grid-gap: 25px;
   overflow: hidden;
   padding-bottom: 15px;
+
+  @media ${SIZES.mobileL} {
+    display: grid;
+  }
+
+  @media ${SIZES.laptop} {
+    display: grid;
+    grid-gap: 40px;
+  }
 `
 
 export const BoxWrapper = styled.div`
@@ -56,9 +74,21 @@ export const ColorWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 30vw;
-  width: 30vw;
+  height: 80vw;
+  width: 80vw;
   background-color: ${({ theme }) => theme.medium};
+
+  @media ${SIZES.tablet} {
+    height: 50vw;
+    width: 50vw;
+  }
+
+  @media ${SIZES.laptop} {
+    height: 35vw;
+    width: 35vw;
+    max-width: 550px;
+    max-height: 550px;
+  }
 `
 
 export const NameSurnameWrapper = styled.div`
@@ -75,27 +105,44 @@ export const NameSurname = styled.div`
   position: absolute;
   text-align: center;
   width: 200%;
-  font-size: 9vw;
+  font-size: 16.5vw;
   font-weight: ${fontWeight.bold};
   color: white;
   z-index: 5;
-`
 
-export const LightShadow = styled.div`
-  position: absolute;
-  text-align: center;
-  width: 200%;
-  font-size: 9vw;
-  font-weight: ${fontWeight.bold};
-  color: ${({ theme }) => theme.light};
-  z-index: 2;
-  margin: 10px 0 0 10px;
+  @media ${SIZES.tablet} {
+    font-size: 9vw;
+    font-weight: ${fontWeight.bold};
+  }
+
+  ${({ secondary }) =>
+    secondary &&
+    css`
+      margin: 10px 0 0 10px;
+      color: ${({ theme }) => theme.light};
+      z-index: 4;
+    `}
 `
 
 export const StyledInfoBox = styled(InfoBox)`
-  font-size: ${fontSize.m};
-  font-weight: ${fontWeight.medium};
+  padding: 8px 20px;
+  font-size: ${fontSize.s};
+  font-weight: ${fontWeight.regular};
+
+  @media ${SIZES.tablet} {
+    padding: 15px;
+    font-size: ${fontSize.m};
+    font-weight: ${fontWeight.medium};
+  }
 `
 export const StyledLogo = styled(Logo)`
   height: 50%;
+`
+
+export const StyledArrow = styled(Arrow)`
+  width: 40px;
+  height: 40px;
+  margin-bottom: 40px;
+  transform: rotate(90deg);
+  fill: ${({ theme }) => theme.dark};
 `

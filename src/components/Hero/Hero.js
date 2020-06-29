@@ -2,65 +2,72 @@ import React from "react"
 
 import {
   StyledHeader,
-  HeroContent,
   NameSurname,
-  LightShadow,
-  DarkShadow,
   ColorWrapper,
   StyledH1,
   BoxWrapper,
   StyledInfoBox,
   StyledLogo,
   NameSurnameWrapper,
-  OverflowWrapper,
   BoxContent,
+  StyledArrow,
 } from "./Hero.style"
 
-const Hero = ({ image }) => {
+const Hero = ({ offer }) => {
   return (
     <StyledHeader>
-      <HeroContent>
-        <ColorWrapper>
-          <StyledLogo />
+      <ColorWrapper>
+        <StyledLogo />
 
-          <NameSurnameWrapper>
-            <NameSurname>ZUZA-NAZARUK</NameSurname>
-            <LightShadow>ZUZA-NAZARUK</LightShadow>
-          </NameSurnameWrapper>
-        </ColorWrapper>
-      </HeroContent>
+        <NameSurnameWrapper>
+          <NameSurname>ZUZA-NAZARUK</NameSurname>
+          <NameSurname secondary="secondary">ZUZA-NAZARUK</NameSurname>
+        </NameSurnameWrapper>
+      </ColorWrapper>
 
       <BoxContent>
         <BoxWrapper>
-          <StyledInfoBox>short & long blog posts </StyledInfoBox>
-          <StyledInfoBox secondary="secondary">
-            guides & tutorials{" "}
-          </StyledInfoBox>
-          <StyledInfoBox>social media posts </StyledInfoBox>
-          <StyledInfoBox secondary="secondary">newsletters </StyledInfoBox>
-          <StyledInfoBox>case studies </StyledInfoBox>
-          <StyledInfoBox secondary="secondary">
-            website & app content{" "}
-          </StyledInfoBox>
-          <StyledInfoBox>social media posts </StyledInfoBox>
-          <StyledInfoBox secondary="secondary">newsletters </StyledInfoBox>
-          <StyledInfoBox>case studies </StyledInfoBox>
-          <StyledInfoBox secondary="secondary">
-            website & app content{" "}
-          </StyledInfoBox>
+          {offer
+            .slice(0)
+            .reverse()
+            .map((item, index) => (
+              <StyledInfoBox
+                key={item.node.id}
+                secondary={index % 2 === 0 ? "secondary" : null}
+              >
+                {item.node.name}
+              </StyledInfoBox>
+            ))}
+          {offer
+            .slice(0)
+            .reverse()
+            .map((item, index) => (
+              <StyledInfoBox
+                key={item.node.id}
+                secondary={index % 2 === 0 ? "secondary" : null}
+              >
+                {item.node.name}
+              </StyledInfoBox>
+            ))}
         </BoxWrapper>
 
         <BoxWrapper>
-          <StyledInfoBox secondary="secondary">
-            website & app content{" "}
-          </StyledInfoBox>
-          <StyledInfoBox>case studies </StyledInfoBox>
-          <StyledInfoBox secondary="secondary">newsletters </StyledInfoBox>
-          <StyledInfoBox>social media posts </StyledInfoBox>
-          <StyledInfoBox secondary="secondary">
-            guides & tutorials{" "}
-          </StyledInfoBox>
-          <StyledInfoBox>short & long blog posts </StyledInfoBox>
+          {offer.map((item, index) => (
+            <StyledInfoBox
+              key={item.node.id}
+              secondary={index % 2 === 0 ? "secondary" : null}
+            >
+              {item.node.name}
+            </StyledInfoBox>
+          ))}
+          {offer.map((item, index) => (
+            <StyledInfoBox
+              key={item.node.id}
+              secondary={index % 2 === 0 ? "secondary" : null}
+            >
+              {item.node.name}
+            </StyledInfoBox>
+          ))}
         </BoxWrapper>
       </BoxContent>
 
@@ -68,6 +75,8 @@ const Hero = ({ image }) => {
         I am a freelance writer who creates compelling online content on social
         and environmental issues that will give your brand a distinctive voice
       </StyledH1>
+
+      <StyledArrow />
     </StyledHeader>
   )
 }

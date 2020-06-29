@@ -29,7 +29,10 @@ const IndexPage = ({ data }) => {
     <NavigationLayout homepage={true}>
       <SEO title="Home" />
 
-      <Hero image={data.datoCmsPersonalinfo.image} />
+      <Hero
+        image={data.datoCmsPersonalinfo.image}
+        offer={data.allDatoCmsOfferItem.edges}
+      />
 
       <Offer id="offer" color="primary" forwardRef={primaryRef} />
 
@@ -57,6 +60,15 @@ export const query = graphql`
       image {
         fluid(maxWidth: 600) {
           ...GatsbyDatoCmsFluid
+        }
+      }
+    }
+
+    allDatoCmsOfferItem {
+      edges {
+        node {
+          id
+          name
         }
       }
     }
