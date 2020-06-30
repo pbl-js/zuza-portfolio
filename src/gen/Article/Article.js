@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import { ThemeContext } from "context/ThemeContext"
+import SEO from "components/seo"
 
 import { StyledContent, Title, LinksWrapper } from "./Article.style"
 import NavigationLayout from "layouts/NavigationLayout"
@@ -10,12 +11,14 @@ import ContentWrapper from "components/ContentWrapper/ContentWrapper"
 export const query = graphql`
   query querySingleArticle($articleId: String!) {
     datoCmsArticle(id: { eq: $articleId }) {
+      description
       content
       title
       image {
         fluid(maxWidth: 1000) {
           ...GatsbyDatoCmsFluid
         }
+        url
       }
       topics {
         id
@@ -38,6 +41,12 @@ const Article = ({ data }) => {
 
   return (
     <NavigationLayout>
+      <SEO
+        title={data.datoCmsArticle.title}
+        image={data.datoCmsArticle.image.url}
+        description={data.datoCmsArticle.description}
+      />
+
       <ContentWrapper>
         <Title>{data.datoCmsArticle.title}</Title>
         <Image

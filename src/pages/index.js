@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <NavigationLayout homepage={true}>
-      <SEO title="Home" />
+      <SEO title="ZuzaNazaruk" />
 
       <Hero
         image={data.datoCmsPersonalinfo.image}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { graphql } from "gatsby"
 import { ThemeContext } from "context/ThemeContext"
+import SEO from "components/seo"
 
 import { ActiveTopicsContext } from "context/ActiveTopicsContext"
 
@@ -46,6 +47,7 @@ const PortfolioPage = ({ data }) => {
 
   return (
     <NavigationLayout>
+      <SEO title="Portfolio" />
       <ContentWrapper>
         <Counter>{`${renderArticles.length}/${allArticles.length}`}</Counter>
 

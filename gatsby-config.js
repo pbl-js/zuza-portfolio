@@ -3,9 +3,9 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `ZuzaNazaruk`,
+    description: `I am a freelance writer who creates compelling online content on social and environmental issues that will give your brand a distinctive voice`,
+    author: `Zuza Nazaruk`,
   },
   plugins: [
     {
