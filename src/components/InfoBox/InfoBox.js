@@ -38,7 +38,6 @@ const InfoBox = styled.div`
     content: "";
     display: block;
     background-color: ${({ theme }) => theme.dark};
-    /* border: 4px solid ${({ theme }) => theme.dark}; */
   }
 
   ${({ secondary }) =>

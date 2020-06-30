@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import { useFormik } from "formik"
+import axios from "axios"
 
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 import {
@@ -15,13 +16,30 @@ import {
 } from "./Contact.style"
 
 const Contact = ({ id, color, forwardRef, contactData }) => {
+  const [submiting, setSubmiting] = useState(false)
+  const [messageConfirm, setMessageConfirm] = useState("")
+
   const initialValues = {
     email: "",
     message: "",
   }
 
   const onSubmit = values => {
-    console.log(values)
+    setSubmiting(true)
+    setMessageConfirm("")
+    axios
+      .post(
+        "https://us-central1-zuza-portfolio.cloudfunctions.net/sendEmail",
+        formik.values
+      )
+      .then(res => {
+        setSubmiting(false)
+        setMessageConfirm("Message succesfully sent")
+      })
+      .catch(err => {
+        setSubmiting(false)
+        setMessageConfirm("Message error. Use contact data")
+      })
   }
 
   const validate = values => {
@@ -43,8 +61,6 @@ const Contact = ({ id, color, forwardRef, contactData }) => {
     onSubmit,
     validate,
   })
-
-  console.log(formik.errors)
 
   return (
     <SectionWrapper id={id} color={color} forwardRef={forwardRef}>
@@ -115,7 +131,9 @@ const Contact = ({ id, color, forwardRef, contactData }) => {
             {formik.errors.message && formik.touched.message && (
               <div>{formik.errors.message}</div>
             )}
-            <button type="submit">Send</button>
+            <button type="submit">{submiting ? "Sending" : "Send"}</button>
+
+            {messageConfirm && <div>{messageConfirm}</div>}
           </StyledForm>
         </InnerWrapper>
       </MainWrapper>
