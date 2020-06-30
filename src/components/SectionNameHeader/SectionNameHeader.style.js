@@ -15,13 +15,13 @@ export const StyledHeader = styled.header`
 export const TextLine = styled(motion.div)`
   display: flex;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.light};
+  color: var(--primary-color);
   font-size: 12vw;
   font-weight: ${fontWeight.bold};
   letter-spacing: 0.4rem;
   line-height: 100%;
   -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+  -webkit-text-stroke-color: var(--secondary-color);
   @media ${SIZES.tablet} {
     font-size: 8vw;
   }
@@ -34,5 +34,5 @@ export const TextLine = styled(motion.div)`
 `
 
 export const SingleWord = styled.div`
-  color: ${({ filled, theme }) => filled && theme.dark};
+  color: ${({ filled, theme }) => filled && "var(--secondary-color)"};
 `

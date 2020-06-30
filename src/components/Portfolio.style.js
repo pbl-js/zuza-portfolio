@@ -24,7 +24,7 @@ export const Counter = styled.div`
   margin: 30px 0;
   font-size: ${fontSize.xxl};
   font-weight: ${fontWeight.semiBold};
-  color: ${({ theme }) => theme.dark};
+  color: var(--secondary-color);
 `
 
 export const TopicsWrapper = styled.div`
@@ -45,9 +45,10 @@ export const TopicToggle = styled.button`
   font-size: ${fontSize.xs};
   margin-bottom: 16px;
   background-color: ${({ active, theme }) =>
-    active ? theme.dark : "transparent"};
-  border: 2px solid ${({ theme }) => theme.dark};
-  color: ${({ active, theme }) => (active ? theme.light : theme.dark)};
+    active ? "var(--secondary-color)" : "transparent"};
+  border: 2px solid var(--secondary-color);
+  color: ${({ active, theme }) =>
+    active ? "var(--secondary-color)" : "var(--primary-color)"};
   cursor: pointer;
   outline: 0;
   /* :hover {

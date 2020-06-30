@@ -66,7 +66,7 @@ export const StyledH1 = styled(H1)`
   }
 
   .fill {
-    color: ${({ theme }) => theme.dark};
+    color: var(--secondary-color);
   }
 `
 
@@ -77,7 +77,7 @@ export const ToggleWrapper = styled.div`
   grid-gap: 40px;
 `
 export const ListHeader = styled.div`
-position: relative;
+  position: relative;
   padding-left: 30px;
   &::after {
     content: "";
@@ -86,8 +86,7 @@ position: relative;
     top: 0;
     width: 10px;
     height: 100%;
-    background-color: ${({ theme }) => theme.dark};
-    /* border: 2px solid ${({ theme }) => theme.dark}; */
+    background-color: var(--secondary-color);
   }
 `
 
@@ -98,5 +97,5 @@ export const StyledH2 = styled(H1)`
   font-weight: ${fontWeight.semiBold};
   letter-spacing: 0.3rem;
   -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+  -webkit-text-stroke-color: var(--secondary-color);
 `

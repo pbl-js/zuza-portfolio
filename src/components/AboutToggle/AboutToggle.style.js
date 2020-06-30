@@ -12,7 +12,7 @@ export const MainWrapper = styled(motion.div)`
   grid-template-columns: 1fr;
   grid-gap: 10px;
   justify-items: start;
-  color: ${({ theme }) => theme.dark};
+  color: var(--secondary-color);
   font-size: ${fontSize.s};
   font-weight: ${fontWeight.medium};
 
@@ -23,8 +23,7 @@ export const MainWrapper = styled(motion.div)`
     top: 0;
     width: 10px;
     height: 100%;
-    /* background-color: ${({ theme }) => theme.dark}; */
-    border: 2px solid ${({ theme }) => theme.dark};
+    border: 2px solid var(--secondary-color);
   }
 `
 export const StyledH1 = styled(H1)`
@@ -34,7 +33,7 @@ export const StyledH1 = styled(H1)`
   font-weight: ${fontWeight.semiBold};
   letter-spacing: 0.3rem;
   -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+  -webkit-text-stroke-color: var(--secondary-color);
 `
 
 export const ToggleButton = styled(motion.button)`
@@ -44,7 +43,7 @@ export const ToggleButton = styled(motion.button)`
   background: transparent;
   border: 0;
   font-size: ${fontSize.m};
-  color: ${({ theme }) => theme.dark};
+  color: var(--secondary-color);
   cursor: pointer;
   outline: 0;
 
@@ -54,7 +53,7 @@ export const ToggleButton = styled(motion.button)`
 `
 
 export const StyledArrow = styled(Arrow)`
-  fill: ${({ theme }) => theme.dark};
+  fill: var(--secondary-color);
   margin-left: 8px;
   height: 20px;
   transform: rotate(${({ reverse }) => (reverse ? "180deg" : 0)});
@@ -75,5 +74,5 @@ export const ChildrenWrapper = styled(motion.div)`
 export const Divider = styled.span`
   width: 100%;
   height: 1px;
-  background-color: ${({ theme }) => theme.dark};
+  background-color: var(--secondary-color);
 `

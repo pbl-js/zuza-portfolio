@@ -3,7 +3,7 @@ import Dots from "images/dots.svg"
 
 const StyledDots = styled(Dots)`
   path {
-    fill: ${({ theme }) => theme.dark};
+    fill: var(--secondary-color);
   }
 `
 

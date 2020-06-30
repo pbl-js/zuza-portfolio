@@ -2,7 +2,7 @@ import { css } from "styled-components"
 
 export const strokeText = css`
   letter-spacing: 2px;
-  color: ${({ theme }) => theme.light};
+  color: var(--primary-color);
   -webkit-text-stroke: 1.5px;
-  -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+  -webkit-text-stroke-color: var(--secondary-color);
 `

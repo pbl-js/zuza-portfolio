@@ -6,8 +6,7 @@ import Footer from "components/Footer/Footer"
 
 const StyledMain = styled.main`
   padding-top: 100px;
-  background-color: ${({ theme }) => theme.light};
-  /* min-height: calc(100vh - 100px); */
+  background-color: var(--primary-color);
   transition: background-color 0.5s;
 `
 

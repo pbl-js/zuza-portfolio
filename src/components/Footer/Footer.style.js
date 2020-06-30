@@ -27,7 +27,7 @@ export const ReferenceWrapper = styled.div`
     left: 50%;
     transform: translateX(-50%);
     width: 120vw;
-    background-color: ${({ theme }) => theme.dark};
+    background-color: var(--secondary-color);
   }
 `
 
@@ -82,12 +82,12 @@ export const MovingReferenceWrapper = styled.div`
 export const FooterBottom = styled.div`
   width: 100vw;
   padding: 20px 0;
-  background-color: ${({ theme }) => theme.dark};
+  background-color: var(--secondary-color);
 `
 
 export const StyledContentWrapper = styled(ContentWrapper)`
   width: 100%;
-  color: ${({ theme }) => theme.light};
+  color: var(--primary-color);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -95,7 +95,7 @@ export const StyledContentWrapper = styled(ContentWrapper)`
   text-align: center;
 
   a {
-    color: ${({ theme }) => theme.light};
+    color: var(--primary-color);
     text-decoration: underline;
   }
 
@@ -116,7 +116,7 @@ export const DirectionButton = styled.button`
   transform: translate(${({ right }) => (right ? "50%" : "-50%")}, -50%);
   width: 45px;
   height: 45px;
-  background-color: ${({ theme }) => theme.dark};
+  background-color: var(--secondary-color);
   border: 0;
   border-radius: 50%;
   outline: 0;

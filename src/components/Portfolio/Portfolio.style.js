@@ -10,7 +10,7 @@ export const CategoryItem = styled(motion.div)`
   align-items: center;
   width: 100%;
   padding: 5px 0;
-  border-bottom: 2px solid ${({ theme }) => theme.dark};
+  border-bottom: 2px solid var(--secondary-color);
   @media ${SIZES.tablet} {
     padding: 20px 0;
   }
@@ -26,19 +26,19 @@ export const MotionLink = styled(motion.div)`
   letter-spacing: 0.4rem;
   color: transparent;
   -webkit-text-stroke: 1.5px;
-  -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+  -webkit-text-stroke-color: var(--secondary-color);
 
   @media ${SIZES.tablet} {
     font-size: ${fontSize.xxl};
     font-weight: ${fontWeight.semiBold};
     letter-spacing: 0.7rem;
     -webkit-text-stroke: 2px;
-    -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+    -webkit-text-stroke-color: var(--secondary-color);
   }
 `
 
 export const StyledArrow = styled(Arrow)`
-  fill: ${({ theme }) => theme.dark};
+  fill: var(--secondary-color);
   height: 40px;
 
   @media ${SIZES.tablet} {

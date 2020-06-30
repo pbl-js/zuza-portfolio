@@ -12,13 +12,13 @@ const StyledWrapper = styled.div`
   justify-content: space-between;
 
   p {
-    color: ${({ theme }) => theme.dark};
+    color: var(--secondary-color);
     padding-bottom: 20px;
     opacity: 0.6;
   }
 
   div {
-    color: ${({ theme }) => theme.dark};
+    color: var(--secondary-color);
     border-top: 1px solid;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ const StyledWrapper = styled.div`
 
   h4 {
     margin-left: 20px;
-    color: ${({ theme }) => theme.dark};
+    color: var(--secondary-color);
   }
 `
 

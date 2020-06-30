@@ -13,9 +13,9 @@ export const StyledNav = styled(motion.nav)`
   left: 0;
   z-index: 9999;
   width: 100%;
-  border-bottom: 4px solid ${({ theme }) => theme.dark};
-  background-color: ${({ theme }) => theme.light};
-  color: ${({ theme }) => theme.dark};
+  border-bottom: 4px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   transition: background-color 0.5s, color 0.5s, border-bottom 0.5s;
   ul {
     list-style: none;
@@ -56,7 +56,7 @@ export const DesktopNav = styled(StyledNav)`
     }
 
     a {
-      color: ${({ theme }) => theme.dark};
+      color: var(--secondary-color);
     }
   }
   @media ${SIZES.tablet} {
@@ -87,9 +87,9 @@ export const MobileUl = styled(motion.ul)`
   a {
     font-size: ${fontSize.xxl};
     -webkit-text-stroke: 2px;
-    -webkit-text-stroke-color: ${({ theme }) => theme.dark};
+    -webkit-text-stroke-color: var(--secondary-color);
     letter-spacing: 3px;
-    color: ${({ theme }) => theme.light};
+    color: var(--primary-color);
   }
 `
 
@@ -102,7 +102,7 @@ export const StyledLogo = styled(Logo)`
   grid-area: logo;
   height: 100%;
   width: 100%;
-  fill: ${({ theme }) => theme.dark};
+  fill: var(--secondary-color);
   @media ${SIZES.tablet} {
     height: 100%;
   }
@@ -114,7 +114,7 @@ export const StyledMenu = styled(Menu)`
   right: 10px;
   width: 30px;
   height: 30px;
-  fill: ${({ theme }) => theme.dark};
+  fill: var(--secondary-color);
   z-index: 10;
   cursor: pointer;
   background-color: transparent;

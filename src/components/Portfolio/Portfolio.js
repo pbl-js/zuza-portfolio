@@ -8,7 +8,7 @@ import { ActiveTopicsContext } from "context/ActiveTopicsContext"
 import SectionWrapper from "components/SectionWrapper/SectionWrapper"
 import { CategoryItem, MotionLink, StyledArrow } from "./Portfolio.style"
 
-const Portfolio = ({ color, forwardRef, id, theme }) => {
+const Portfolio = ({ color, forwardRef, id }) => {
   const data = useStaticQuery(graphql`
     query PortfolioQuery {
       allDatoCmsTopic {
@@ -23,7 +23,6 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
     }
   `)
 
-  const themeContext = useContext(ThemeContext)
   const { setActiveTopics } = useContext(ActiveTopicsContext)
 
   const containerVariants = {
@@ -33,7 +32,7 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
   const linkVariants = {
     hover: {
       letterSpacing: "10px",
-      color: themeContext.dark,
+      color: "var(--primary-color)",
       transition: { duration: 0.2 },
     },
   }

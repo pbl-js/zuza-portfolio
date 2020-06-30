@@ -18,7 +18,7 @@ export const MainWrapper = styled.div`
 `
 
 export const HeadingWrapper = styled.div`
-  color: ${({ theme }) => theme.dark};
+  color: var(--secondary-color);
   font-size: ${fontSize.s};
   font-weight: ${fontWeight.medium};
   margin-bottom: 40px;
@@ -37,7 +37,7 @@ export const StyledList = styled.ul`
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    color: ${({ theme }) => theme.dark};
+    color: var(--secondary-color);
     font-size: ${fontSize.s};
     font-weight: ${fontWeight.medium};
 
@@ -46,15 +46,15 @@ export const StyledList = styled.ul`
       font-weight: ${fontWeight.medium};
       display: flex;
       align-items: center;
-      color: ${({ theme }) => theme.dark};
+      color: var(--secondary-color);
     }
 
     svg {
       width: 50px;
       height: 50px;
       margin-right: 20px;
-      fill: ${({ theme }) => theme.light};
-      background-color: ${({ theme }) => theme.dark};
+      fill: var(--primary-color);
+      background-color: var(--secondary-color);
       padding: 10px;
     }
   }
@@ -67,18 +67,18 @@ export const StyledLinkedin = styled(Linkedin)``
 export const StyledForm = styled.form`
   display: grid;
   grid-gap: 20px;
-  color: ${({ theme }) => theme.dark};
+  color: var(--secondary-color);
 
   input {
     width: 100%;
     padding: 15px;
     background: transparent;
-    border: 2px solid ${({ theme }) => theme.dark};
-    color: ${({ theme }) => theme.dark};
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     font-size: ${fontSize.s};
     font-weight: ${fontWeight.regular};
     ::placeholder {
-      color: ${({ theme }) => theme.dark};
+      color: var(--secondary-color);
       font-size: ${fontSize.s};
       font-weight: ${fontWeight.regular};
     }
@@ -89,12 +89,12 @@ export const StyledForm = styled.form`
     width: 100%;
     padding: 15px;
     background: transparent;
-    border: 2px solid ${({ theme }) => theme.dark};
-    color: ${({ theme }) => theme.dark};
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     font-size: ${fontSize.s};
     font-weight: ${fontWeight.regular};
     ::placeholder {
-      color: ${({ theme }) => theme.dark};
+      color: var(--secondary-color);
       font-size: ${fontSize.s};
       font-weight: ${fontWeight.regular};
     }
@@ -104,8 +104,8 @@ export const StyledForm = styled.form`
   button {
     padding: 15px;
     width: 150px;
-    background-color: ${({ theme }) => theme.dark};
-    color: ${({ theme }) => theme.light};
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     font-size: ${fontSize.s};
     font-weight: ${fontWeight.regular};
     border: 0;

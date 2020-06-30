@@ -76,7 +76,7 @@ export const ColorWrapper = styled.div`
   align-items: center;
   height: 80vw;
   width: 80vw;
-  background-color: ${({ theme }) => theme.dark};
+  background-color: var(--secondary-color);
 
   @media ${SIZES.tablet} {
     height: 50vw;
@@ -119,7 +119,7 @@ export const NameSurname = styled.div`
     secondary &&
     css`
       margin: 10px 0 0 10px;
-      color: ${({ theme }) => theme.light};
+      color: var(--primary-color);
       z-index: 4;
     `}
 `
@@ -144,5 +144,5 @@ export const StyledArrow = styled(Arrow)`
   height: 40px;
   margin-bottom: 40px;
   transform: rotate(90deg);
-  fill: ${({ theme }) => theme.dark};
+  fill: var(--secondary-color);
 `

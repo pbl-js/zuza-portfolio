@@ -115,7 +115,8 @@ export const KnowledgeItem = styled(InfoBox)`
   }
 
   svg {
-    fill: ${({ theme, secondary }) => (secondary ? theme.light : theme.dark)};
+    fill: ${({ theme, secondary }) =>
+      secondary ? "var(--primary-color)" : "var(--secondary-color)"};
 
     width: 55px;
     height: 55px;

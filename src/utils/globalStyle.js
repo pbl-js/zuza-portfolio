@@ -11,11 +11,13 @@ const GlobalStyle = createGlobalStyle`
     }
     html {
         font-size: 62.5%;
+        --primary-color: ${({ colors }) => colors.dark};
+        --secondary-color: ${({ colors }) => colors.light};
     }
     body {
         font-family: 'Khand', sans-serif;
         font-size: 1.6rem;
-        background-color: ${({ theme }) => theme.light};
+        background-color: var(--primary-color);
         color: white;
         
     }

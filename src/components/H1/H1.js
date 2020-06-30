@@ -8,15 +8,17 @@ const H1 = styled.h1`
   font-size: ${fontSize.m};
   font-weight: ${fontWeight.semiBold};
   letter-spacing: 2px;
-  color: ${({ theme, reverse }) => (reverse ? theme.light : theme.dark)};
+  color: ${({ theme, reverse }) =>
+    reverse ? "var(--primary-color)" : "var(--secondary-color)"};
 
   ${({ stroke }) =>
     stroke &&
     css`
-      color: ${({ theme, reverse }) => (reverse ? theme.dark : theme.light)};
+      color: ${({ theme, reverse }) =>
+        reverse ? "var(--secondary-color)" : "var(--primary-color)"};
       -webkit-text-stroke: 1.5px;
       -webkit-text-stroke-color: ${({ theme, reverse }) =>
-        reverse ? theme.light : theme.dark};
+        reverse ? "var(--primary-color)" : "var(--secondary-color)"};
     `}
 
 @media ${SIZES.tablet} {

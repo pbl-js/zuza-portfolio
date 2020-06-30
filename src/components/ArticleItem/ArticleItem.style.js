@@ -11,7 +11,7 @@ export const ItemWrapper = styled.div`
   grid-template-rows: 300px 1fr;
   width: 100%;
   margin-bottom: 20px;
-  border: 1px solid ${({ theme }) => theme.dark};
+  border: 1px solid var(--secondary-color);
   cursor: pointer;
 
   @media ${SIZES.tablet} {
@@ -61,10 +61,10 @@ export const InnerWrapper = styled.div`
       list-style: none;
       padding-right: 10px;
       margin-right: 10px;
-      color: ${({ theme }) => theme.dark};
+      color: var(--secondary-color);
       font-weight: ${fontWeight.medium};
       font-size: ${fontSize.xs};
-      border-right: 1px solid ${({ theme }) => theme.dark};
+      border-right: 1px solid var(--secondary-color);
     }
   }
 `
@@ -77,7 +77,7 @@ export const Line = styled.span`
   width: 120vw;
   height: 1px;
   position: absolute;
-  background-color: ${({ theme }) => theme.dark};
+  background-color: var(--secondary-color);
   transform: translateX(-50%);
   @media ${SIZES.tablet} {
     display: block;

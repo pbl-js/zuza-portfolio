@@ -11,7 +11,7 @@ export const MainWrapper = styled.div`
   position: relative;
   width: 100%;
   margin: 50px 0;
-  background-color: ${({ theme }) => theme.dark};
+  background-color: var(--secondary-color);
   width: 100vw;
 `
 
@@ -23,7 +23,7 @@ export const Container = styled.div`
   height: 100%;
   padding: 30px ${layout.mainPadding.mobile};
   max-width: ${layout.maxWidth};
-  color: ${({ theme }) => theme.light};
+  color: var(--primary-color);
 
   button {
     margin-top: 20px;
@@ -52,8 +52,8 @@ export const Button = styled(motion.button)`
   padding: 17px 30px;
   font-size: ${fontSize.s};
   font-weight: ${fontWeight.medium};
-  background-color: ${({ theme }) => theme.light};
-  color: ${({ theme }) => theme.dark};
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   border: 0;
   outline: 0;
   cursor: pointer;

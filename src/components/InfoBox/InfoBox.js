@@ -7,9 +7,9 @@ const InfoBox = styled.div`
   height: 100%;
   max-width: 400px;
   padding: 15px;
-  background-color: ${({ theme }) => theme.light};
-  border: 2px solid ${({ theme }) => theme.dark};
-  color: ${({ theme }) => theme.dark};
+  background-color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
   margin: auto 0;
   font-size: ${fontSize.l};
   font-weight: ${fontWeight.semiBold};
@@ -24,8 +24,8 @@ const InfoBox = styled.div`
     transform: skewX(45deg);
     content: "";
     display: block;
-    background-color: ${({ theme }) => theme.dark};
-    /* border: 4px solid ${({ theme }) => theme.dark}; */
+    background-color: var(--secondary-color);
+    /* border: 4px solid var(--secondary-color); */
   }
 
   &::before {
@@ -37,14 +37,14 @@ const InfoBox = styled.div`
     transform: skewY(45deg);
     content: "";
     display: block;
-    background-color: ${({ theme }) => theme.dark};
+    background-color: var(--secondary-color);
   }
 
   ${({ secondary }) =>
     secondary &&
     css`
-      background-color: ${({ theme }) => theme.dark};
-      color: ${({ theme }) => theme.light};
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
 
       &::after {
         position: absolute;
@@ -55,8 +55,8 @@ const InfoBox = styled.div`
         transform: skewX(45deg);
         content: "";
         display: block;
-        background-color: ${({ theme }) => theme.light};
-        border: 2px solid ${({ theme }) => theme.dark};
+        background-color: var(--primary-color);
+        border: 2px solid var(--secondary-color);
       }
 
       &::before {
@@ -68,8 +68,8 @@ const InfoBox = styled.div`
         transform: skewY(45deg);
         content: "";
         display: block;
-        background-color: ${({ theme }) => theme.light};
-        border: 2px solid ${({ theme }) => theme.dark};
+        background-color: var(--primary-color);
+        border: 2px solid var(--secondary-color);
       }
     `}
 `

@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import GlobalStyle from "utils/globalStyle"
-import { ThemeProvider } from "styled-components"
 
 import ThemeContextProvider, { ThemeContext } from "context/ThemeContext"
-import ActiveTopicsContextProvider, {
-  ActiveTopicsContext,
-} from "context/ActiveTopicsContext"
+import ActiveTopicsContextProvider from "context/ActiveTopicsContext"
 
 const ContextConsumer = ({ children }) => {
   const { themeChooser } = useContext(ThemeContext)
@@ -16,11 +13,10 @@ const ContextConsumer = ({ children }) => {
   }, [])
 
   return (
-    <ThemeProvider theme={themeChooser()}>
-      <GlobalStyle transition={transition} />
-
+    <>
+      <GlobalStyle transition={transition} colors={themeChooser()} />
       {children}
-    </ThemeProvider>
+    </>
   )
 }
 

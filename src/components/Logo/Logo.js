@@ -3,7 +3,7 @@ import Logo from "images/zuza-logo.svg"
 
 const StyledLogo = styled(Logo)`
   .st0 {
-    fill: ${({ theme }) => theme.light};
+    fill: var(--primary-color);
     stroke: white;
   }
 

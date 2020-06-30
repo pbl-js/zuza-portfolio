@@ -1,22 +1,22 @@
 export const colors = {
   hero: {
-    light: "#234258",
-    dark: "#8DC8DA",
+    dark: "#234258",
+    light: "#8DC8DA",
   },
   primary: {
-    light: "#277948",
-    dark: "#F2E466",
+    dark: "#277948",
+    light: "#F2E466",
   },
   secondary: {
-    light: "#412779",
-    dark: "#EC9B9B",
+    dark: "#412779",
+    light: "#EC9B9B",
   },
   tertiary: {
-    light: "#792727",
-    dark: "#F2BA66",
+    dark: "#792727",
+    light: "#F2BA66",
   },
   quaternary: {
-    light: "#1C2937",
-    dark: "#86e195",
+    dark: "#1C2937",
+    light: "#86e195",
   },
 }

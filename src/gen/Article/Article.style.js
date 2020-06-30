@@ -15,7 +15,7 @@ export const Title = styled.h1`
 export const StyledContent = styled.div`
   width: 100%;
   text-align: justify;
-  color: ${({ theme }) => theme.dark};
+  color: var(--secondary-color);
   font-size: ${fontSize.s};
 
   img {
@@ -49,7 +49,7 @@ export const StyledContent = styled.div`
       left: 0;
       width: 100%;
       height: 10px;
-      background-color: ${({ theme }) => theme.dark};
+      background-color: var(--secondary-color);
       opacity: 0.5;
     }
 
@@ -61,7 +61,7 @@ export const StyledContent = styled.div`
       left: 0;
       width: 100%;
       height: 10px;
-      background-color: ${({ theme }) => theme.dark};
+      background-color: var(--secondary-color);
       opacity: 0.5;
     }
   }
@@ -87,7 +87,7 @@ export const LinksWrapper = styled.ul`
   border-top: 5px dotted;
   width: 100%;
   list-style: none;
-  color: ${({ theme }) => theme.dark};
+  color: var(--secondary-color);
   font-size: ${fontSize.s};
   overflow: hidden;
   li {
