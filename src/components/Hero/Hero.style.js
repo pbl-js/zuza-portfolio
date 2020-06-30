@@ -76,7 +76,7 @@ export const ColorWrapper = styled.div`
   align-items: center;
   height: 80vw;
   width: 80vw;
-  background-color: ${({ theme }) => theme.medium};
+  background-color: ${({ theme }) => theme.dark};
 
   @media ${SIZES.tablet} {
     height: 50vw;

@@ -14,6 +14,7 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
       allDatoCmsTopic {
         edges {
           node {
+            homevisable
             topicItem
             id
           }
@@ -48,24 +49,26 @@ const Portfolio = ({ color, forwardRef, id, theme }) => {
 
   return (
     <SectionWrapper id={id} color={color} forwardRef={forwardRef}>
-      {data.allDatoCmsTopic.edges.map(category => (
-        <Link
-          to="/portfolio"
-          key={category.node.id}
-          style={{ textDecoration: "none", width: "100%" }}
-          onClick={() => setActiveTopics([category.node.topicItem])}
-        >
-          <CategoryItem whileHover="hover" variants={containerVariants}>
-            <MotionLink variants={linkVariants}>
-              {category.node.topicItem}
-            </MotionLink>
+      {data.allDatoCmsTopic.edges.map(category =>
+        category.node.homevisable ? null : (
+          <Link
+            to="/portfolio"
+            key={category.node.id}
+            style={{ textDecoration: "none", width: "100%" }}
+            onClick={() => setActiveTopics([category.node.topicItem])}
+          >
+            <CategoryItem whileHover="hover" variants={containerVariants}>
+              <MotionLink variants={linkVariants}>
+                {category.node.topicItem}
+              </MotionLink>
 
-            <motion.span variants={logoVariants} initial="noHover">
-              <StyledArrow />
-            </motion.span>
-          </CategoryItem>
-        </Link>
-      ))}
+              <motion.span variants={logoVariants} initial="noHover">
+                <StyledArrow />
+              </motion.span>
+            </CategoryItem>
+          </Link>
+        )
+      )}
     </SectionWrapper>
   )
 }

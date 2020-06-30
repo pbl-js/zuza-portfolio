@@ -1,7 +1,6 @@
 export const colors = {
   hero: {
     light: "#234258",
-    medium: "#8DC8DA",
     dark: "#8DC8DA",
   },
   primary: {
