@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { useMeasure } from "react-use"
 
 import {
   ReferenceWrapper,
@@ -7,12 +8,10 @@ import {
   InnerReferenceWrapper,
   MovingReferenceWrapper,
   StyledHeading,
-  FooterMiddle,
   StyledContentWrapper,
   DirectionButton,
   StyledArrow,
   FooterBottom,
-  StyledLogo,
 } from "./Footer.style"
 import ContentWrapper from "components/ContentWrapper/ContentWrapper"
 import ReferenceItem from "components/ReferenceItem/ReferenceItem"
@@ -38,8 +37,28 @@ const Footer = () => {
   `)
 
   const references = data.allDatoCmsCompanyreference.edges
+  const [ref, { width }] = useMeasure()
+  const contentWidth = references.length * 300 + (references.length - 1) * 20
+  const [slideProgress, setSlideProgress] = useState(0)
 
-  console.log(data)
+  const slide = direction => {
+    setSlideProgress(prevState => {
+      if (direction === "right") {
+        if (prevState + 300 >= contentWidth - width) {
+          return contentWidth - width
+        } else {
+          return prevState + 300
+        }
+      } else if (direction === "left") {
+        if (prevState - 300 < 0) {
+          return 0
+        } else {
+          return prevState - 300
+        }
+      }
+    })
+  }
+
   return (
     <footer>
       <ContentWrapper>
@@ -51,16 +70,19 @@ const Footer = () => {
           </StyledHeading>
 
           <ButtonWrapper>
-            <DirectionButton>
+            <DirectionButton onClick={() => slide("left")}>
               <StyledArrow />
             </DirectionButton>
 
-            <DirectionButton right="right">
+            <DirectionButton right="right" onClick={() => slide("right")}>
               <StyledArrow />
             </DirectionButton>
 
-            <InnerReferenceWrapper>
-              <MovingReferenceWrapper referencesCount={references.length}>
+            <InnerReferenceWrapper ref={ref}>
+              <MovingReferenceWrapper
+                referencesCount={references.length}
+                animate={{ x: -slideProgress }}
+              >
                 {references.map(reference => (
                   <ReferenceItem
                     key={reference.node.id}

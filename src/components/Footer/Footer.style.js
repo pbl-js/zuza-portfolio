@@ -3,7 +3,7 @@ import { SIZES } from "utils/mediaQueries"
 import { fontSize, fontWeight } from "utils/typography"
 import { strokeText } from "utils/styledMixins"
 import Arrow from "images/arrow.svg"
-import Logo from "images/logo.svg"
+import { motion } from "framer-motion"
 
 import ContentWrapper from "components/ContentWrapper/ContentWrapper"
 
@@ -69,7 +69,7 @@ export const InnerReferenceWrapper = styled.div`
   height: 100%;
   overflow: hidden;
 `
-export const MovingReferenceWrapper = styled.div`
+export const MovingReferenceWrapper = styled(motion.div)`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(

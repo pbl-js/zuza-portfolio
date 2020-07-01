@@ -55,7 +55,7 @@ const Hero = ({ offer }) => {
           {offer.map((item, index) => (
             <StyledInfoBox
               key={item.node.id}
-              secondary={index % 2 === 0 ? "secondary" : null}
+              secondary={index % 2 === 1 ? "secondary" : null}
             >
               {item.node.name}
             </StyledInfoBox>
@@ -63,7 +63,7 @@ const Hero = ({ offer }) => {
           {offer.map((item, index) => (
             <StyledInfoBox
               key={item.node.id}
-              secondary={index % 2 === 0 ? "secondary" : null}
+              secondary={index % 2 === 1 ? "secondary" : null}
             >
               {item.node.name}
             </StyledInfoBox>

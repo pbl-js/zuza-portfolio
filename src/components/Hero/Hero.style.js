@@ -9,7 +9,7 @@ import Arrow from "images/arrow.svg"
 export const StyledHeader = styled.header`
   width: 100%;
   position: relative;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   display: grid;
   grid-template-rows: 2fr auto auto;
   align-items: center;
