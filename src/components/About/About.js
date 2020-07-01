@@ -23,6 +23,7 @@ const About = ({ id, color, forwardRef }) => {
       opacity: 0,
     },
   }
+
   return (
     <SectionWrapper id={id} color={color} forwardRef={forwardRef}>
       <AboutHeader>

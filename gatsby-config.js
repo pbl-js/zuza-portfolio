@@ -56,6 +56,7 @@ module.exports = {
         hooks: path.join(__dirname, "src/hooks"),
         icons: path.join(__dirname, "src/icons"),
         gen: path.join(__dirname, "src/gen"),
+        functions: path.join(__dirname, "src/functions"),
       },
     },
     {

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import { ThemeContext } from "context/ThemeContext"
 import SEO from "components/seo"
+import setTheme from "functions/setTheme"
 
 import { StyledContent, Title, LinksWrapper } from "./Article.style"
 import NavigationLayout from "layouts/NavigationLayout"
@@ -34,10 +35,7 @@ export const query = graphql`
 `
 
 const Article = ({ data }) => {
-  const { setTheme } = useContext(ThemeContext)
-  useEffect(() => {
-    setTheme("secondary")
-  })
+  setTheme("secondary")
 
   return (
     <NavigationLayout>

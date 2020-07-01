@@ -44,16 +44,14 @@ export const TopicToggle = styled.button`
   width: 100%;
   font-size: ${fontSize.xs};
   margin-bottom: 16px;
-  background-color: ${({ active, theme }) =>
+  background-color: ${({ active }) =>
     active ? "var(--secondary-color)" : "transparent"};
   border: 2px solid var(--secondary-color);
-  color: ${({ active, theme }) =>
-    active ? "var(--secondary-color)" : "var(--primary-color)"};
+  color: ${({ active }) =>
+    active ? "var(--primary-color)" : "var(--secondary-color)"};
   cursor: pointer;
   outline: 0;
-  /* :hover {
-    text-decoration: underline;
-  } */
+
   @media ${SIZES.mobileL} {
     font-size: ${fontSize.s};
     padding: 10px 30px;

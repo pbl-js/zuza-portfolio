@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { colors } from "utils/colors"
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -11,10 +12,11 @@ const GlobalStyle = createGlobalStyle`
     }
     html {
         font-size: 62.5%;
-        --primary-color: ${({ colors }) => colors.dark};
-        --secondary-color: ${({ colors }) => colors.light};
+        --primary-color: ${colors.hero.dark};
+        --secondary-color: ${colors.hero.light};
     }
     body {
+        
         font-family: 'Khand', sans-serif;
         font-size: 1.6rem;
         background-color: var(--primary-color);

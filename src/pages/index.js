@@ -1,6 +1,5 @@
-import React, { useContext, useRef } from "react"
+import React, { useRef } from "react"
 import { graphql } from "gatsby"
-import { ThemeContext } from "context/ThemeContext"
 import useScrollColor from "hooks/useScrollColor"
 
 import SEO from "components/seo"
@@ -18,12 +17,7 @@ const IndexPage = ({ data }) => {
   const tertiaryRef = useRef(null)
   const quaternaryRef = useRef(null)
 
-  const { setTheme } = useContext(ThemeContext)
-
-  useScrollColor(
-    { primaryRef, secondaryRef, tertiaryRef, quaternaryRef },
-    setTheme
-  )
+  useScrollColor({ primaryRef, secondaryRef, tertiaryRef, quaternaryRef })
 
   return (
     <NavigationLayout homepage={true}>

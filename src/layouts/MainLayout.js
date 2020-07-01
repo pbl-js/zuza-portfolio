@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
 import GlobalStyle from "utils/globalStyle"
 
-import ThemeContextProvider, { ThemeContext } from "context/ThemeContext"
 import ActiveTopicsContextProvider from "context/ActiveTopicsContext"
 
 const ContextConsumer = ({ children }) => {
-  const { themeChooser } = useContext(ThemeContext)
   const [transition, setTransition] = useState(false)
 
   useEffect(() => {
@@ -14,7 +12,7 @@ const ContextConsumer = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle transition={transition} colors={themeChooser()} />
+      <GlobalStyle transition={transition} />
       {children}
     </>
   )
@@ -22,11 +20,9 @@ const ContextConsumer = ({ children }) => {
 
 const MainLayout = ({ children }) => {
   return (
-    <ThemeContextProvider>
-      <ActiveTopicsContextProvider>
-        <ContextConsumer children={children} />
-      </ActiveTopicsContextProvider>
-    </ThemeContextProvider>
+    <ActiveTopicsContextProvider>
+      <ContextConsumer children={children} />
+    </ActiveTopicsContextProvider>
   )
 }
 
