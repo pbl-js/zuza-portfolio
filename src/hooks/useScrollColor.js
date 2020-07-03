@@ -5,7 +5,7 @@ const useScrollColor = refs => {
   const { primaryRef, secondaryRef, tertiaryRef, quaternaryRef } = refs
 
   const handleScroll = useCallback(() => {
-    let html = document.documentElement
+    let html = typeof document !== "undefined" ? document.documentElement : null
     const position = window.pageYOffset
 
     const windowHeight = window.innerHeight

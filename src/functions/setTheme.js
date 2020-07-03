@@ -1,7 +1,7 @@
 import { colors } from "utils/colors"
 
 const setTheme = color => {
-  let html = document.documentElement
+  let html = typeof document !== "undefined" ? document.documentElement : null
 
   switch (color) {
     case "hero":

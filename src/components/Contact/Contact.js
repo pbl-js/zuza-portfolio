@@ -69,8 +69,8 @@ const Contact = ({ id, color, forwardRef, contactData }) => {
           <HeadingWrapper>
             <StyledHeading stroke="stroke">Contact data</StyledHeading>
             <p>
-              Zostaw nam krótką wiadomość, a oddzwonimy do Ciebie w dogodnym dla
-              Ciebie terminie.
+              Message me for details on pricing and available content packages.
+              I reply within two working days
             </p>
           </HeadingWrapper>
 
@@ -101,10 +101,10 @@ const Contact = ({ id, color, forwardRef, contactData }) => {
         <InnerWrapper>
           <HeadingWrapper>
             <StyledHeading stroke="stroke">Write to me</StyledHeading>
-            <p>
+            {/* <p>
               Zostaw nam krótką wiadomość, a oddzwonimy do Ciebie w dogodnym dla
               Ciebie terminie.
-            </p>
+            </p> */}
           </HeadingWrapper>
 
           <StyledForm onSubmit={formik.handleSubmit}>

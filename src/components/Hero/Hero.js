@@ -21,7 +21,7 @@ const Hero = ({ offer }) => {
 
         <NameSurnameWrapper>
           <NameSurname>ZUZA-NAZARUK</NameSurname>
-          <NameSurname secondary="secondary">ZUZA-NAZARUK</NameSurname>
+          <NameSurname secondary="secondary">ZUZANAZARUK</NameSurname>
         </NameSurnameWrapper>
       </ColorWrapper>
 
