@@ -20,7 +20,7 @@ const Hero = ({ offer }) => {
         <StyledLogo />
 
         <NameSurnameWrapper>
-          <NameSurname>ZUZA-NAZARUK</NameSurname>
+          <NameSurname>ZUZANAZARUK</NameSurname>
           <NameSurname secondary="secondary">ZUZANAZARUK</NameSurname>
         </NameSurnameWrapper>
       </ColorWrapper>
