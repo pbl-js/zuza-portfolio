@@ -16,13 +16,15 @@ import {
 import ArticleItem from "components/ArticleItem/ArticleItem"
 
 const PortfolioPage = ({ data }) => {
-  const allArticles = data.allDatoCmsArticle.edges
+  const visableArticles = data.allDatoCmsArticle.edges.filter(
+    article => !article.node.hide
+  )
   const topics = data.allDatoCmsTopic.edges
   const { activeTopics, addActiveTopics } = useContext(ActiveTopicsContext)
   const [renderArticles, setRenderArticles] = useState([])
 
   useEffect(() => {
-    allArticles.forEach(article => {
+    visableArticles.forEach(article => {
       const articleTopics = article.node.topics.map(topic => topic.topicItem)
       let commonPart = articleTopics.filter(topic =>
         activeTopics.includes(topic)
@@ -46,7 +48,7 @@ const PortfolioPage = ({ data }) => {
     <NavigationLayout>
       <SEO title="Portfolio" />
       <ContentWrapper>
-        <Counter>{`${renderArticles.length}/${allArticles.length}`}</Counter>
+        <Counter>{`${renderArticles.length}/${visableArticles.length}`}</Counter>
 
         <TopicsWrapper>
           {topics.map(topic => (
@@ -61,15 +63,17 @@ const PortfolioPage = ({ data }) => {
         </TopicsWrapper>
 
         <ArticleWrapper>
-          {renderArticles.map(article => (
-            <ArticleItem
-              key={article.node.id}
-              title={article.node.title}
-              topics={article.node.topics}
-              image={article.node.image}
-              activeTopics={activeTopics}
-            />
-          ))}
+          {renderArticles.map(article => {
+            return article.node.hide ? null : (
+              <ArticleItem
+                key={article.node.id}
+                title={article.node.title}
+                topics={article.node.topics}
+                image={article.node.image}
+                activeTopics={activeTopics}
+              />
+            )
+          })}
         </ArticleWrapper>
       </ContentWrapper>
     </NavigationLayout>
@@ -92,6 +96,7 @@ export const query = graphql`
         node {
           id
           title
+          hide
           topics {
             id
             topicItem
