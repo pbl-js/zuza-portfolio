@@ -58,93 +58,128 @@ const About = ({ id, color, forwardRef }) => {
       <ToggleWrapper>
         <ListHeader>
           <StyledH2>
-            By hiring me as your content writer, you take a step towards
-            enriching your business.
+            Myself is the one thing that should stay out of my texts - but
+            here’s an exception
           </StyledH2>
         </ListHeader>
 
         <AboutToggle
-          title="Unique mix of professional & academic experience"
-          description="I am capable of conveying well-researched messages of social importance in a lightweight yet convincing manner."
+          title="I bridge the professional and the academic "
+          description="xxx"
         >
+          <motion.p variants={ChildrenVariants}>
+            My academic and professional experiences have been complementing
+            each other ever since my journalistic journey began. I pursued media
+            theory minors and electives in both my Bachelor’s and my Masters,
+            gaining insights into the role of the media in war, conflict, and
+            peace processes, as well as understanding the shifting of the media
+            in the new technological age. My academic experience also left me
+            with an attention to detail, a scientifically rigorous approach to
+            research, and a whole lot of critical thinking, all of which I
+            actively use in my journalistic work.
+          </motion.p>
+
           <motion.h4 variants={ChildrenVariants}>
-            I have professional experience in:
+            My academic experience includes: 
           </motion.h4>
 
           <ul>
             <motion.li variants={ChildrenVariants}>
-              sustainable lifestyle (natural cosmetics, vegetarian and vegan
-              diet, zero waste and circular movements, clean tech, plastic-free
-              movements, chemical-free skincare)
+              international relations (M.A.)
             </motion.li>
 
             <motion.li variants={ChildrenVariants}>
-              social inclusion (intersectionality, gender gap, refugee
+              political science 
+            </motion.li>
+
+            <motion.li variants={ChildrenVariants}>media theory</motion.li>
+
+            <motion.li variants={ChildrenVariants}>
+              international public governance (B.Sc.) 
+            </motion.li>
+          </ul>
+
+          <motion.p variants={ChildrenVariants}>
+            I harnessed a rich body of experiences in various fields relating to
+            human rights and sustainability. Thanks to a mix of hands-on
+            expertise in, among others, commercial journalism, advocacy writing,
+            event management, and art curation, I gained in-depth knowledge in
+            areas such as systemic sustainability and social inclusion. At the
+            same time, I could look at issues such as the status quo of business
+            making and power structures in those fields from an insider
+            perspective.
+          </motion.p>
+
+          <motion.h4 variants={ChildrenVariants}>
+            Apart from journalism, I gained professional experience in: 
+          </motion.h4>
+
+          <ul>
+            <motion.li variants={ChildrenVariants}>
+              Systemic sustainability (education, communication)
+            </motion.li>
+
+            <motion.li variants={ChildrenVariants}>
+              Social inclusion (intersectionality, gender gap, refugee
               employment)
             </motion.li>
-          </ul>
-
-          <motion.h4 variants={ChildrenVariants}>
-            My academic experience expands to:
-          </motion.h4>
-
-          <ul>
-            <motion.li variants={ChildrenVariants}>
-              international public administration
-            </motion.li>
-
-            <motion.li variants={ChildrenVariants}>political science</motion.li>
 
             <motion.li variants={ChildrenVariants}>
-              sociology and social psychology
+              Arts and culture (curation, management)
+            </motion.li>
+
+            <motion.li variants={ChildrenVariants}>
+              Grassroots activism (environmentalism, feminism)  
             </motion.li>
           </ul>
+        </AboutToggle>
+
+        <AboutToggle
+          title="I am an information junkie, an old school one"
+          description="xxx"
+        >
+          <motion.p variants={ChildrenVariants}>
+            I am one of the anomalies of gen Z that would not survive without
+            books. I indulge in investigative, ground-breaking research, such as
+            those regarding surveillance capitalism, tax havens, wealth gap,
+            intercultural exchanges, or corruption. My idols include Souad
+            Mehkennet and Shoshana Zuboff. If you noticed a gender bias here,
+            you are right.
+          </motion.p>
 
           <motion.p variants={ChildrenVariants}>
-            My texts are always thoroughly researched, appropriately sourced,
-            and delivered on time.
+            Apart from a generalist perspective on the essential progressing
+            issues, my devotion to books helped me achieve a high level of
+            literary flexibility. I am able to create content in a wide range of
+            genres and forms, going beyond news reports, feature articles, and
+            analyses into case studies, online courses, guides, stories, poetry,
+            and theatre plays.
           </motion.p>
         </AboutToggle>
 
         <AboutToggle
-          title="Capability to create content in various forms "
-          description="I engage readers to the fullest thanks to my literary flexibility."
+          title="I stay quiet and let the stories speak"
+          description="xxx"
         >
           <motion.p variants={ChildrenVariants}>
-            I am able to create content in a wide range of genres and forms,
-            such as long and short blog posts, lifestyle or city guides, case
-            studies, or website contents, as well as more artistic forms such as
-            stories, poetry, or theatre plays. Proficiency in various literary
-            forms allows me to ensure integrity between the message and the form
-            which enhances reader engagement.
-          </motion.p>
-
-          <motion.p variants={ChildrenVariants}>
-            I spend time to understand the needs of my clients and I am highly
-            flexible. I am capable of coming up with long-term content
-            strategies due to my professional experience in running cultural
-            organizations.
-          </motion.p>
-
-          <motion.p variants={ChildrenVariants}>
-            My content is search engine optimised and social media friendly.
+            I believe in the power of personal stories, which is why
+            interviewing is one of my favourite research methods. I conducted
+            interviews with people from various ethnicities and minorities,
+            ages, and career steps, giving every person my undivided attention
+            and the comfort of informed consent. This experience, alongside my
+            fluency in English, Polish, and French, provided me with an intimate
+            understanding of international audiences. As a result, I can take a
+            deep dive into cultures outside my own and deliver a clear,
+            culturally sensitive message. 
           </motion.p>
         </AboutToggle>
 
-        <AboutToggle
-          title="Understanding of international audiences"
-          description="I can help your business expand to new markets by conveying messages in a culturally sensitive way."
-        >
+        <AboutToggle title="Privately…" description="xxx">
           <motion.p variants={ChildrenVariants}>
-            My content is people-focused, which allows to create a personal
-            connection between the business and its audiences.
-          </motion.p>
-
-          <motion.p variants={ChildrenVariants}>
-            I have professional experience working with Europeans, Arabs,
-            refugees and ethnic minorities. This experience, alongside my
-            fluency in English, Polish and French, provided me with an intimate
-            understanding of international audiences.
+            I'm just as human in private as in professional life. I am an inline
+            skater with a passion for backpacking and slow travel. I love good
+            literature, mostly non-fiction, and green tea. I hope I will still
+            be on time to see the rainforests and the Great Barrier Reef.
           </motion.p>
         </AboutToggle>
       </ToggleWrapper>
