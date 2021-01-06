@@ -40,7 +40,7 @@ const PortfolioPage = ({ data }) => {
     })
   }, [activeTopics])
 
-  setTheme("secondary")
+  setTheme("primary")
 
   return (
     <NavigationLayout>

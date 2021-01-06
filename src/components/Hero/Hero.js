@@ -13,15 +13,15 @@ import {
   StyledArrow,
 } from "./Hero.style"
 
-const Hero = ({ offer }) => {
+const Hero = ({ offer, id }) => {
   return (
-    <StyledHeader>
+    <StyledHeader id={id}>
       <ColorWrapper>
         <StyledLogo />
 
         <NameSurnameWrapper>
-          <NameSurname>ZUZANAZARUK</NameSurname>
-          <NameSurname secondary="secondary">ZUZANAZARUK</NameSurname>
+          <NameSurname>ZUZA NAZARUK</NameSurname>
+          <NameSurname secondary="secondary">ZUZA NAZARUK</NameSurname>
         </NameSurnameWrapper>
       </ColorWrapper>
 
@@ -72,8 +72,10 @@ const Hero = ({ offer }) => {
       </BoxContent>
 
       <StyledH1>
-        I am a freelance writer who creates compelling online content on social
-        and environmental issues that will give your brand a distinctive voice
+        I am a freelance journalist with an eye for systemic ties between
+        politics, culture, and economy. I seek journalistic processes that move
+        beyond the conventional to live up to the challenges of the 21st
+        century.
       </StyledH1>
 
       <StyledArrow />

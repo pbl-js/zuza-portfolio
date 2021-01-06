@@ -35,7 +35,7 @@ export const query = graphql`
 `
 
 const Article = ({ data }) => {
-  setTheme("secondary")
+  setTheme("primary")
 
   return (
     <NavigationLayout>

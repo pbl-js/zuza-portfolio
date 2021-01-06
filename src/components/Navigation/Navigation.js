@@ -12,7 +12,7 @@ import {
   DesktopNav,
 } from "./Navigation.style"
 
-const liItems = ["offer", "portfolio", "about", "contact"]
+const liItems = ["home", "portfolio", "about", "contact"]
 
 const Navigation = ({ homepage }) => {
   const [open, setOpen] = useState(false)

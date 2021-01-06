@@ -15,29 +15,30 @@ const IndexPage = ({ data }) => {
   const primaryRef = useRef(null)
   const secondaryRef = useRef(null)
   const tertiaryRef = useRef(null)
-  const quaternaryRef = useRef(null)
+  // const quaternaryRef = useRef(null)
 
-  useScrollColor({ primaryRef, secondaryRef, tertiaryRef, quaternaryRef })
+  useScrollColor({ primaryRef, secondaryRef, tertiaryRef })
 
   return (
     <NavigationLayout homepage={true}>
       <SEO title="ZuzaNazaruk" />
 
       <Hero
+        id="home"
         image={data.datoCmsPersonalinfo.image}
         offer={data.allDatoCmsOfferItem.edges}
       />
 
-      <Offer id="offer" color="primary" forwardRef={primaryRef} />
+      {/* <Offer id="offer" color="primary" forwardRef={primaryRef} /> */}
 
-      <Portfolio id="portfolio" color="secondary" forwardRef={secondaryRef} />
+      <Portfolio id="portfolio" color="primary" forwardRef={primaryRef} />
 
-      <About id="about" color="tertiary" forwardRef={tertiaryRef} />
+      <About id="about" color="secondary" forwardRef={secondaryRef} />
 
       <Contact
         id="contact"
-        color="quaternary"
-        forwardRef={quaternaryRef}
+        color="tertiary"
+        forwardRef={tertiaryRef}
         contactData={data.datoCmsPersonalinfo}
       />
     </NavigationLayout>

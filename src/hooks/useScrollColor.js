@@ -28,15 +28,18 @@ const useScrollColor = refs => {
         html.style.setProperty("--primary-color", colors.secondary.dark)
         html.style.setProperty("--secondary-color", colors.secondary.light)
       } else if (
-        position > tertiaryRef.current.offsetTop - threshold &&
-        position < quaternaryRef.current.offsetTop - threshold
+        position >
+        tertiaryRef.current.offsetTop - threshold
+        // &&
+        // position < quaternaryRef.current.offsetTop - threshold
       ) {
         html.style.setProperty("--primary-color", colors.tertiary.dark)
         html.style.setProperty("--secondary-color", colors.tertiary.light)
-      } else if (position > quaternaryRef.current.offsetTop - threshold) {
-        html.style.setProperty("--primary-color", colors.quaternary.dark)
-        html.style.setProperty("--secondary-color", colors.quaternary.light)
       }
+      // else if (position > quaternaryRef.current.offsetTop - threshold) {
+      //   html.style.setProperty("--primary-color", colors.quaternary.dark)
+      //   html.style.setProperty("--secondary-color", colors.quaternary.light)
+      // }
     }
   }, [secondaryRef, tertiaryRef, quaternaryRef])
 
