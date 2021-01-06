@@ -3,8 +3,8 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: `ZuzaNazaruk`,
-    description: `I am a freelance writer who creates compelling online content on social and environmental issues that will give your brand a distinctive voice`,
+    title: `Freelance journalist`,
+    description: `I am a freelance journalist with an eye for systemic ties between politics, culture, and economy. I seek journalistic processes that move beyond the conventional to live up to the challenges of the 21st century.`,
     author: `Zuza Nazaruk`,
   },
   plugins: [
