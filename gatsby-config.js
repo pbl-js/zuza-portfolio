@@ -59,16 +59,30 @@ module.exports = {
         functions: path.join(__dirname, "src/functions"),
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Khand`,
+    //         subsets: ["latin"],
+    //         variants: ["300", `400`, "500", "600", `700`],
+    //       },
+    //     ],
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Khand`,
-            subsets: ["latin"],
-            variants: ["300", `400`, "500", "600", `700`],
-          },
+          "Khand",
+          "Khand:300",
+          "Khand:400",
+          "Khand:500",
+          "Khand:600",
+          "Khand:700",
         ],
+        display: "swap",
       },
     },
     {
