@@ -28,31 +28,26 @@ const About = ({ id, color, forwardRef }) => {
     <SectionWrapper id={id} color={color} forwardRef={forwardRef}>
       <AboutHeader>
         <StyledH1 stroke="stroke">
-          <span>Engaging</span>
-          <span>content</span>
-          <span>makes</span>
-          <span className="fill">your</span>
-          <span className="fill">business</span>
-          <span>stand </span>
-          <span>out </span>
-          <span>through:</span>
+          <span>I </span>
+          <span>am </span>
+          <span>available </span>
+          <span className="fill">for </span>
+          <span className="fill">freelance </span>
+          <span>opportunities </span>
+          <span>in: </span>
         </StyledH1>
 
         <ul>
-          <StyledBox>Generating regular and organic traffic</StyledBox>
-          <StyledBox secondary="secondary">
-            Increasing conversion rates
-          </StyledBox>
-          <StyledBox>
-            Forging rapport between clients and your message
-          </StyledBox>
+          <StyledBox>Hosting interviews & moderating events </StyledBox>
+          <StyledBox secondary="secondary">Research & writing</StyledBox>
+          <StyledBox>Drafting & executing information campaigns</StyledBox>
           <Dots />
         </ul>
       </AboutHeader>
 
       <CallToAction>
-        Ultimately, online content delivers your business's message to the right
-        audiences and ensures that the clients return.
+        Get in touch for additional information on pricing, samples, and
+        references.
       </CallToAction>
 
       <ToggleWrapper>
@@ -65,7 +60,7 @@ const About = ({ id, color, forwardRef }) => {
 
         <AboutToggle
           title="I bridge the professional and the academic "
-          description="xxx"
+          description="By combining strong research skills and practical experience in issues at hand"
         >
           <motion.p variants={ChildrenVariants}>
             My academic and professional experiences have been complementing
@@ -92,7 +87,10 @@ const About = ({ id, color, forwardRef }) => {
               political science 
             </motion.li>
 
-            <motion.li variants={ChildrenVariants}>media theory</motion.li>
+            <motion.li variants={ChildrenVariants}>
+              media theory (specifically media in war, conflict, and peace
+              processes; shifting of the media in the new technological age)
+            </motion.li>
 
             <motion.li variants={ChildrenVariants}>
               international public governance (B.Sc.) 
@@ -135,8 +133,8 @@ const About = ({ id, color, forwardRef }) => {
         </AboutToggle>
 
         <AboutToggle
-          title="I am an information junkie, an old school one"
-          description="xxx"
+          title="My literary flexibility accompanies a generalist outlook"
+          description="I am an information junkie, an old school one"
         >
           <motion.p variants={ChildrenVariants}>
             I am one of the anomalies of gen Z that would not survive without
@@ -159,7 +157,7 @@ const About = ({ id, color, forwardRef }) => {
 
         <AboutToggle
           title="I stay quiet and let the stories speak"
-          description="xxx"
+          description="Zooming into the microcosm of (pseudo-)globalisation"
         >
           <motion.p variants={ChildrenVariants}>
             I believe in the power of personal stories, which is why
@@ -174,7 +172,7 @@ const About = ({ id, color, forwardRef }) => {
           </motion.p>
         </AboutToggle>
 
-        <AboutToggle title="Privately…" description="xxx">
+        <AboutToggle title="Privately…" description="">
           <motion.p variants={ChildrenVariants}>
             I'm just as human in private as in professional life. I am an inline
             skater with a passion for backpacking and slow travel. I love good
