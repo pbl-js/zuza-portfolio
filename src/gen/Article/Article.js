@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
-import { ThemeContext } from "context/ThemeContext"
 import SEO from "components/seo"
 import setTheme from "functions/setTheme"
+import DownloadMedia from "components/DownloadMedia/DownloadMedia"
 
 import { StyledContent, Title, LinksWrapper } from "./Article.style"
 import NavigationLayout from "layouts/NavigationLayout"
@@ -15,6 +15,15 @@ export const query = graphql`
       description
       content
       title
+      fileToDownload {
+        websiteHeaderTitle
+        websiteHeaderMessage
+        emailSubject
+        emailMessage
+        file {
+          url
+        }
+      }
       image {
         fluid(maxWidth: 1000) {
           ...GatsbyDatoCmsFluid
@@ -66,6 +75,10 @@ const Article = ({ data }) => {
             </li>
           ))}
         </LinksWrapper>
+
+        {data.datoCmsArticle.fileToDownload && (
+          <DownloadMedia fileToDownload={data.datoCmsArticle.fileToDownload} />
+        )}
       </ContentWrapper>
     </NavigationLayout>
   )

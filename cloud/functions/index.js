@@ -22,3 +22,24 @@ exports.sendEmail = functions.https.onRequest((request, response) => {
     })
   })
 })
+
+exports.sendLinkToDownload = functions.https.onRequest((request, response) => {
+  sgMail.setApiKey(functions.config().sendgrid.key)
+
+  const msg = {
+    to: request.body.email,
+    from: "zuzanazarukwrites@gmail.com",
+    subject: request.body.subject,
+    text: request.body.text,
+  }
+
+  cors(request, response, () => {
+    sgMail.send(msg, (err, res) => {
+      if (err) {
+        response.sendStatus(500)
+      } else {
+        response.send(res)
+      }
+    })
+  })
+})
